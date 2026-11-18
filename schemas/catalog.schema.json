@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/hidecard/YBS-Bus-Data/schemas/catalog.schema.json",
+  "title": "YBS Routes Catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "api_name",
+    "api_version",
+    "description",
+    "source_repository",
+    "base_url",
+    "route_count",
+    "routes"
+  ],
+  "properties": {
+    "api_name": { "type": "string" },
+    "api_version": { "type": "string" },
+    "description": { "type": "string" },
+    "source_repository": { "type": "string" },
+    "base_url": { "type": "string" },
+    "route_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "routes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "bus_line",
+          "route_name",
+          "line_name",
+          "agency",
+          "route_type",
+          "total_stops",
+          "qr_payment",
+          "data_file",
+          "data_url"
+        ],
+        "properties": {
+          "bus_line": { "type": "string", "minLength": 1 },
+          "route_name": { "type": "string" },
+          "line_name": { "type": "string" },
+          "agency": { "type": "string" },
+          "route_type": { "type": "string" },
+          "total_stops": { "type": "integer", "minimum": 2 },
+          "qr_payment": { "type": "string" },
+          "data_file": {
+            "type": "string",
+            "pattern": "^ybs_.+_data\\.json$"
+          },
+          "data_url": { "type": "string" }
+        }
+      }
+    }
+  }
+}

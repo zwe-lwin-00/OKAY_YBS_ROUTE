@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/hidecard/YBS-Bus-Data/schemas/route.schema.json",
+  "title": "YBS Route Data File",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["bus_line", "route_info", "stops"],
+  "properties": {
+    "bus_line": {
+      "type": "string",
+      "minLength": 1
+    },
+    "route_id": {
+      "type": "string",
+      "description": "Optional legacy/internal route id"
+    },
+    "route_info": {
+      "type": "object",
+      "required": [
+        "Route Name",
+        "Line Name",
+        "Agency",
+        "Route Type",
+        "Total Stops",
+        "QR Payment"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "Route Name": { "type": "string" },
+        "Line Name": { "type": "string" },
+        "Agency": { "type": "string" },
+        "Route Type": { "type": "string" },
+        "Total Stops": { "type": "string" },
+        "QR Payment": { "type": "string" }
+      }
+    },
+    "direction_meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pattern"],
+      "properties": {
+        "pattern": {
+          "type": "string",
+          "enum": ["out_and_back", "one_way"]
+        },
+        "apex_index": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "outbound_label": { "type": "string" },
+        "inbound_label": { "type": "string" },
+        "one_way_label": { "type": "string" }
+      }
+    },
+    "stops": {
+      "type": "array",
+      "minItems": 2,
+      "items": { "$ref": "stop.schema.json" }
+    }
+  }
+}

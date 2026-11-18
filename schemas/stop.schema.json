@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/hidecard/YBS-Bus-Data/schemas/stop.schema.json",
+  "title": "YBS Stop",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "index",
+    "stop_name_en",
+    "stop_name_mm",
+    "road",
+    "latitude",
+    "longitude"
+  ],
+  "properties": {
+    "index": {
+      "type": "string",
+      "pattern": "^[0-9]+$"
+    },
+    "stop_name_en": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stop_name_mm": {
+      "type": "string",
+      "minLength": 1
+    },
+    "road": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "number",
+      "minimum": 15.5,
+      "maximum": 18.5
+    },
+    "longitude": {
+      "type": "number",
+      "minimum": 95.0,
+      "maximum": 98.0
+    },
+    "direction": {
+      "type": "string",
+      "enum": ["outbound", "inbound", "one_way", "turnaround"]
+    },
+    "lane": {
+      "type": "string",
+      "enum": ["unspecified", "right", "left", "center", "shared"]
+    },
+    "opposite_stop_index": {
+      "type": ["string", "null"],
+      "description": "Index of the likely opposite-direction curb stop on the same route, if known"
+    }
+  }
+}
