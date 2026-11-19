@@ -32,6 +32,25 @@ export type Stop = {
   opposite_stop_index?: string;
 };
 
+export type RouteFare = {
+  currency?: string;
+  amount_min?: number | null;
+  amount_max?: number | null;
+  notes?: string;
+  source?: string;
+  updated_at?: string;
+};
+
+export type RouteSchedule = {
+  first_departure?: string | null;
+  last_departure?: string | null;
+  headway_minutes?: number | null;
+  days?: string[];
+  notes?: string;
+  source?: string;
+  updated_at?: string;
+};
+
 export type RouteData = {
   bus_line: string;
   route_info: {
@@ -41,6 +60,19 @@ export type RouteData = {
     "Route Type": string;
     "Total Stops": string;
     "QR Payment": string;
+    Fare?: string;
+    Schedule?: string;
+  };
+  /** Optional — rarely populated in current static dump. */
+  fare?: RouteFare;
+  /** Optional — rarely populated in current static dump. */
+  schedule?: RouteSchedule;
+  direction_meta?: {
+    pattern: "out_and_back" | "one_way";
+    apex_index?: number;
+    outbound_label?: string;
+    inbound_label?: string;
+    one_way_label?: string;
   };
   stops: Stop[];
 };
@@ -59,7 +91,10 @@ export type NearbyStop = Stop & {
 
 /** User-selectable place for trip planning / stop search. */
 export type StopPlace = {
+  /** Canonical stable id (`name@lat,lng`, ≈11m curb). */
   id: string;
+  /** Short stable alias (`p_…`) for share URLs. */
+  short_id?: string;
   name_en: string;
   name_mm: string;
   road: string;
@@ -107,7 +142,7 @@ export type TripLeg = RideLeg | WalkLeg;
 
 export type TripPlan = {
   id: string;
-  transfers: 0 | 1 | 2;
+  transfers: 0 | 1 | 2 | 3;
   score: number;
   total_ride_stops: number;
   total_walk_meters: number;
@@ -117,6 +152,16 @@ export type TripPlan = {
   estimated_minutes?: number;
   ride_minutes?: number;
   walk_minutes?: number;
+  /** ISO timestamp if planned departing now (static). */
+  estimated_arrive_at?: string;
+  eta_source?: "static_estimate" | "live";
+};
+
+export type PlanOptions = {
+  maxTransfers?: 0 | 1 | 2 | 3;
+  limit?: number;
+  /** Max walk between transfer points (meters). Default 130. */
+  walkTransferMeters?: number;
 };
 
 export type RecentTrip = {

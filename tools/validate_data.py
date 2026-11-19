@@ -45,6 +45,12 @@ def validate_instance(instance, schema_name: str, registry: Registry) -> list[st
     ]
 
 
+PLACEHOLDER_NAMES = {"null", "undefined", "n/a", "na", "-", "?", "none", "test"}
+# Greater Yangon + corridor towns (Okkan / Taikkyi / …)
+LAT_MIN, LAT_MAX = 15.8, 17.65
+LNG_MIN, LNG_MAX = 95.5, 97.2
+
+
 def check_route_consistency(path: Path, data: dict) -> list[str]:
     errors: list[str] = []
     stops = data.get("stops") or []
@@ -53,16 +59,43 @@ def check_route_consistency(path: Path, data: dict) -> list[str]:
     if indexes != expected:
         errors.append(f"{path.name}: stop indexes are not contiguous 1..N")
 
+    prev = None
     for i, stop in enumerate(stops):
-        en = (stop.get("stop_name_en") or "").strip()
-        mm = (stop.get("stop_name_mm") or "").strip()
-        if en != stop.get("stop_name_en") or mm != stop.get("stop_name_mm"):
-            errors.append(f"{path.name}: stop #{i+1} has leading/trailing whitespace in names")
-        if stop.get("stop_name_en") != en or stop.get("stop_name_mm") != mm:
-            pass
+        en_raw = stop.get("stop_name_en")
+        mm_raw = stop.get("stop_name_mm")
+        en = (en_raw or "").strip() if isinstance(en_raw, str) else ""
+        mm = (mm_raw or "").strip() if isinstance(mm_raw, str) else ""
+        if not en:
+            errors.append(f"{path.name}: stop #{i+1} empty stop_name_en")
+        elif en_raw != en:
+            errors.append(f"{path.name}: stop #{i+1} has leading/trailing whitespace in EN name")
+        elif en.lower() in PLACEHOLDER_NAMES:
+            errors.append(f"{path.name}: stop #{i+1} placeholder EN name '{en}'")
+        if not mm:
+            errors.append(f"{path.name}: stop #{i+1} empty stop_name_mm")
+        elif mm_raw != mm:
+            errors.append(f"{path.name}: stop #{i+1} has leading/trailing whitespace in MM name")
+
         lat, lng = stop.get("latitude"), stop.get("longitude")
         if lat == 0 and lng == 0:
             errors.append(f"{path.name}: stop #{i+1} has 0,0 coordinates")
+        elif isinstance(lat, (int, float)) and isinstance(lng, (int, float)):
+            if not (LAT_MIN <= lat <= LAT_MAX and LNG_MIN <= lng <= LNG_MAX):
+                errors.append(
+                    f"{path.name}: stop #{i+1} outside service bbox "
+                    f"({lat}, {lng}) name='{en}'"
+                )
+
+        if prev is not None:
+            if (
+                prev.get("stop_name_en") == stop.get("stop_name_en")
+                and prev.get("latitude") == lat
+                and prev.get("longitude") == lng
+            ):
+                errors.append(
+                    f"{path.name}: stop #{i+1} duplicates previous stop coords+name"
+                )
+        prev = stop
 
     total_text = (data.get("route_info") or {}).get("Total Stops", "")
     if isinstance(total_text, str) and total_text:

@@ -1,0 +1,56 @@
+name: Export & release artifacts
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install tools
+        run: pip install -r tools/requirements.txt
+
+      - name: Validate
+        run: python tools/validate_data.py
+
+      - name: Audit
+        run: python tools/audit_data.py --out exports/audit_report.json
+
+      - name: Build exports
+        run: python tools/export_formats.py --format all
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ybs-exports
+          path: |
+            exports/ybs_routes.geojson
+            exports/routes.csv
+            exports/stops.csv
+            exports/ybs_gtfs_lite.zip
+            exports/audit_report.json
+
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: |
+            exports/ybs_routes.geojson
+            exports/routes.csv
+            exports/stops.csv
+            exports/ybs_gtfs_lite.zip
+            exports/audit_report.json

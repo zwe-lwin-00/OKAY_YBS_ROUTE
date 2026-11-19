@@ -4,7 +4,7 @@ import { AppShell } from "@/components/AppShell";
 export default function NotFound() {
   return (
     <AppShell>
-      <div className="mx-auto max-w-md rounded-3xl border border-line bg-white/70 p-8 text-center">
+      <div className="mx-auto max-w-md surface p-8 text-center">
         <h1 className="font-[family-name:var(--font-syne)] text-2xl font-bold">
           Not found
         </h1>

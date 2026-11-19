@@ -1,5 +1,5 @@
 {
-  "repository": "hidecard/YBS-Bus-Data",
+  "repository": "zwe-lwin-00/OKAY_YBS_ROUTE",
   "github_description": "Static JSON dataset of Yangon (YBS) bus routes, stops, and coordinates for apps, websites, AI assistants, and bots. Not a real-time tracking API.",
   "topics": [
     "yangon",
@@ -21,5 +21,6 @@
     "artificial-intelligence"
   ],
   "suggested_social_description": "Yangon YBS bus route and stop data in JSON, ready to integrate into apps, websites, AI assistants, and bots. Static data; no live tracking.",
+  "raw_base_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/",
   "note": "GitHub repository Description and Topics are repository settings, not files; apply these values in GitHub Settings/About."
 }

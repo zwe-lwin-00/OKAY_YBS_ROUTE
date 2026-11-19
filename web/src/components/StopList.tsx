@@ -10,7 +10,7 @@ export function StopList({ stops }: { stops: Stop[] }) {
 
   return (
     <div>
-      <div className="mb-3 flex items-center gap-2 rounded-2xl border border-line bg-white/70 p-2">
+      <div className="mb-3 flex items-center gap-2 rounded-2xl border border-line bg-bg-elevated p-2">
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}

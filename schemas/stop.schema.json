@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/hidecard/YBS-Bus-Data/schemas/stop.schema.json",
+  "$id": "https://github.com/zwe-lwin-00/OKAY_YBS_ROUTE/schemas/stop.schema.json",
   "title": "YBS Stop",
   "type": "object",
   "additionalProperties": false,

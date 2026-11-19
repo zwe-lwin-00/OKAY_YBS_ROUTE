@@ -2,31 +2,40 @@
 @import "leaflet/dist/leaflet.css";
 
 :root {
-  --bg: #eef3ef;
-  --bg-deep: #d9e6dc;
-  --ink: #10241a;
-  --ink-soft: #3f5a4c;
-  --brand: #0b6b52;
-  --brand-deep: #084f3d;
-  --accent: #f0a202;
-  --accent-ink: #3a2a00;
-  --surface: rgba(255, 255, 255, 0.72);
-  --line: rgba(16, 36, 26, 0.12);
-  --shadow: 0 18px 50px rgba(8, 40, 28, 0.12);
-  --radius: 1.25rem;
+  /* Calm transit utility — sage ink, not purple / cream-terracotta */
+  --bg: #f4f7f5;
+  --bg-elevated: #ffffff;
+  --ink: #0e1f18;
+  --ink-soft: #5a6f64;
+  --ink-faint: #8a9b92;
+  --brand: #0c6b52;
+  --brand-deep: #085340;
+  --brand-soft: #e4f2ec;
+  --accent: #e8a317;
+  --accent-ink: #3d2e05;
+  --line: rgba(14, 31, 24, 0.1);
+  --line-strong: rgba(14, 31, 24, 0.16);
+  --shadow-sm: 0 1px 2px rgba(14, 31, 24, 0.04);
+  --shadow: 0 8px 28px rgba(14, 31, 24, 0.07);
+  --radius-sm: 0.625rem;
+  --radius: 0.875rem;
+  --radius-lg: 1.125rem;
+  --focus: 0 0 0 3px color-mix(in srgb, var(--brand) 28%, transparent);
 }
 
 @theme inline {
   --color-bg: var(--bg);
-  --color-bg-deep: var(--bg-deep);
+  --color-bg-elevated: var(--bg-elevated);
   --color-ink: var(--ink);
   --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
   --color-brand: var(--brand);
   --color-brand-deep: var(--brand-deep);
+  --color-brand-soft: var(--brand-soft);
   --color-accent: var(--accent);
   --color-accent-ink: var(--accent-ink);
-  --color-surface: var(--surface);
   --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
   --font-display: var(--font-syne);
   --font-sans: var(--font-figtree);
   --font-mm: var(--font-noto-mm);
@@ -46,26 +55,10 @@ body {
   color: var(--ink);
   font-family: var(--font-figtree), var(--font-noto-mm), sans-serif;
   background:
-    radial-gradient(1200px 600px at 10% -10%, #c8e6d8 0%, transparent 55%),
-    radial-gradient(900px 500px at 100% 0%, #ffe7a8 0%, transparent 45%),
-    linear-gradient(180deg, #f7faf7 0%, var(--bg) 40%, var(--bg-deep) 100%);
+    radial-gradient(900px 480px at 0% -5%, #dceee5 0%, transparent 55%),
+    radial-gradient(700px 400px at 100% 0%, #f3ecd8 0%, transparent 50%),
+    var(--bg);
   background-attachment: fixed;
-}
-
-body::before {
-  content: "";
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  opacity: 0.35;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230b6b52' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  z-index: 0;
-}
-
-#__next,
-body > * {
-  position: relative;
-  z-index: 1;
 }
 
 a {
@@ -74,25 +67,87 @@ a {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--accent) 55%, white);
-  color: var(--accent-ink);
+  background: color-mix(in srgb, var(--brand) 22%, white);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus);
 }
 
 .mm {
   font-family: var(--font-noto-mm), var(--font-figtree), sans-serif;
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
 .leaflet-container {
   font: inherit;
-  background: #d7e8df;
-  border-radius: 1rem;
+  background: #e4efe9;
+  border-radius: var(--radius);
+}
+
+/* Surfaces */
+.surface {
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.surface-quiet {
+  background: color-mix(in srgb, var(--bg-elevated) 88%, transparent);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+
+.btn-primary {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--brand);
+  padding: 0 1.15rem;
+  font-size: 0.875rem;
+  font-weight: 650;
+  color: #fff;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+  background: var(--brand-deep);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: var(--bg-elevated);
+  padding: 0 1.15rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-secondary:hover {
+  border-color: color-mix(in srgb, var(--brand) 35%, var(--line-strong));
+  color: var(--brand);
+  background: var(--brand-soft);
 }
 
 @keyframes rise-in {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -100,34 +155,17 @@ a {
   }
 }
 
-@keyframes pulse-soft {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.7;
-  }
-  50% {
-    transform: scale(1.08);
-    opacity: 1;
-  }
-}
-
 .animate-rise {
-  animation: rise-in 0.55s ease-out both;
+  animation: rise-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .animate-rise-delay {
-  animation: rise-in 0.65s ease-out 0.08s both;
-}
-
-.animate-pulse-soft {
-  animation: pulse-soft 2.4s ease-in-out infinite;
+  animation: rise-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.06s both;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .animate-rise,
-  .animate-rise-delay,
-  .animate-pulse-soft {
+  .animate-rise-delay {
     animation: none;
   }
 }

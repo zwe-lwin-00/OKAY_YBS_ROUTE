@@ -44,7 +44,7 @@ export function RoutesExplorer({
           />
         </div>
         <div className="flex flex-wrap items-center gap-2">
-          <label className="inline-flex min-h-11 items-center gap-2 rounded-full border border-line bg-white/70 px-3 text-sm">
+          <label className="inline-flex min-h-11 items-center gap-2 rounded-full border border-line bg-bg-elevated px-3 text-sm">
             <input
               type="checkbox"
               checked={qrOnly}
@@ -56,7 +56,7 @@ export function RoutesExplorer({
           <select
             value={agency}
             onChange={(e) => setAgency(e.target.value)}
-            className="min-h-11 rounded-full border border-line bg-white/70 px-3 text-sm outline-none"
+            className="min-h-11 rounded-full border border-line bg-bg-elevated px-3 text-sm outline-none"
           >
             <option value="">All agencies</option>
             {agencies.map((a) => (
@@ -73,7 +73,7 @@ export function RoutesExplorer({
       </p>
 
       {filtered.length ? (
-        <div className="mt-2 overflow-hidden rounded-3xl border border-line bg-white/55 px-3 backdrop-blur">
+        <div className="mt-2 overflow-hidden surface-quiet px-3 backdrop-blur">
           {filtered.map((route) => (
             <RouteRow key={route.slug} route={route} />
           ))}

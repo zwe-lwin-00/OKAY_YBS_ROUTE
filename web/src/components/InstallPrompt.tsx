@@ -71,12 +71,12 @@ export function InstallPrompt() {
 
   return (
     <div className="fixed inset-x-0 bottom-[calc(4.25rem+env(safe-area-inset-bottom))] z-50 px-3 md:bottom-4">
-      <div className="mx-auto flex max-w-lg items-start gap-3 rounded-3xl border border-line bg-white/95 p-4 shadow-[var(--shadow)] backdrop-blur">
+      <div className="surface mx-auto flex max-w-lg items-start gap-3 p-4 shadow-[var(--shadow)]">
         <div className="min-w-0 flex-1">
-          <p className="font-[family-name:var(--font-syne)] font-bold text-ink">
+          <p className="font-[family-name:var(--font-syne)] font-bold tracking-tight text-ink">
             {t("install_title")}
           </p>
-          <p className="mt-1 text-sm text-ink-soft">
+          <p className="mt-1 text-sm leading-relaxed text-ink-soft">
             {iosHint ? t("install_ios") : t("install_body")}
           </p>
         </div>
@@ -85,7 +85,7 @@ export function InstallPrompt() {
             <button
               type="button"
               onClick={() => void install()}
-              className="min-h-10 rounded-xl bg-brand px-3 text-sm font-semibold text-white"
+              className="btn-primary min-h-10 px-3"
             >
               {t("install_cta")}
             </button>
@@ -93,7 +93,7 @@ export function InstallPrompt() {
           <button
             type="button"
             onClick={dismiss}
-            className="min-h-10 rounded-xl border border-line px-3 text-xs font-semibold text-ink-soft"
+            className="btn-secondary min-h-10 px-3 text-xs"
           >
             {t("install_dismiss")}
           </button>

@@ -45,7 +45,7 @@ export function FavoritesPage() {
           {t("fav_routes")}
         </h2>
         {routes.length ? (
-          <div className="overflow-hidden rounded-3xl border border-line bg-white/55 px-3 backdrop-blur">
+          <div className="overflow-hidden surface-quiet px-3 backdrop-blur">
             {routes.map((route) => (
               <div key={route.slug} className="relative">
                 <RouteRow route={route} />
@@ -79,7 +79,7 @@ export function FavoritesPage() {
           {t("fav_stops")}
         </h2>
         {stops.length ? (
-          <div className="overflow-hidden rounded-3xl border border-line bg-white/55 px-3 backdrop-blur">
+          <div className="overflow-hidden surface-quiet px-3 backdrop-blur">
             {stops.map((stop) => (
               <div
                 key={stop.id}

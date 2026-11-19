@@ -9,43 +9,45 @@ type BrandMarkProps = {
 export function BrandMark({ size = "sm" }: BrandMarkProps) {
   const { t } = useLocale();
   const large = size === "lg";
+
   return (
-    <div className="inline-flex items-center gap-3">
+    <div className={`inline-flex items-center ${large ? "gap-4" : "gap-2.5"}`}>
       <span
-        className={`relative grid place-items-center rounded-2xl bg-brand text-white shadow-[0_10px_30px_rgba(11,107,82,0.35)] ${
-          large ? "h-14 w-14" : "h-10 w-10"
+        className={`grid shrink-0 place-items-center rounded-[0.85rem] bg-brand text-white ${
+          large ? "h-12 w-12 sm:h-14 sm:w-14" : "h-9 w-9"
         }`}
         aria-hidden
       >
-        <span className="absolute inset-1 rounded-xl border border-white/25" />
         <svg
           viewBox="0 0 24 24"
-          className={large ? "h-7 w-7" : "h-5 w-5"}
+          className={large ? "h-6 w-6 sm:h-7 sm:w-7" : "h-[1.15rem] w-[1.15rem]"}
           fill="none"
           stroke="currentColor"
-          strokeWidth="1.8"
+          strokeWidth="1.7"
+          strokeLinecap="round"
         >
-          <rect x="3.5" y="7" width="17" height="10" rx="2.5" />
-          <path d="M7 17v2.5M17 17v2.5M3.5 12h17" />
-          <circle cx="8" cy="14.5" r="1" fill="currentColor" stroke="none" />
-          <circle cx="16" cy="14.5" r="1" fill="currentColor" stroke="none" />
+          <rect x="3.5" y="7" width="17" height="10" rx="2.4" />
+          <path d="M7 17v2.2M17 17v2.2M3.5 12h17" />
+          <circle cx="8" cy="14.4" r="0.95" fill="currentColor" stroke="none" />
+          <circle cx="16" cy="14.4" r="0.95" fill="currentColor" stroke="none" />
         </svg>
-        <span className="animate-pulse-soft absolute -right-1 -top-1 h-3 w-3 rounded-full bg-accent" />
       </span>
-      <div className="leading-none">
+      <div className="min-w-0 leading-none">
         <p
-          className={`font-[family-name:var(--font-syne)] font-bold tracking-tight text-ink ${
-            large ? "text-3xl sm:text-4xl" : "text-lg"
+          className={`font-[family-name:var(--font-syne)] font-bold tracking-[-0.03em] text-ink ${
+            large ? "text-[1.85rem] sm:text-[2.35rem]" : "text-[1.05rem]"
           }`}
         >
           YBS Finder
         </p>
         {large ? (
-          <p className="mm mt-2 max-w-[18rem] text-sm text-ink-soft sm:text-base">
+          <p className="mm mt-2.5 max-w-[20rem] text-[0.95rem] leading-snug text-ink-soft">
             {t("brand_tagline")}
           </p>
         ) : (
-          <p className="mt-1 text-xs text-ink-soft">{t("brand_sub")}</p>
+          <p className="mt-1 text-[0.7rem] font-medium tracking-wide text-ink-faint">
+            {t("brand_sub")}
+          </p>
         )}
       </div>
     </div>

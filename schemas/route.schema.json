@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/hidecard/YBS-Bus-Data/schemas/route.schema.json",
+  "$id": "https://github.com/zwe-lwin-00/OKAY_YBS_ROUTE/schemas/route.schema.json",
   "title": "YBS Route Data File",
   "type": "object",
   "additionalProperties": false,
@@ -31,7 +31,48 @@
         "Agency": { "type": "string" },
         "Route Type": { "type": "string" },
         "Total Stops": { "type": "string" },
-        "QR Payment": { "type": "string" }
+        "QR Payment": { "type": "string" },
+        "Fare": {
+          "type": "string",
+          "description": "Optional human-readable fare summary when known"
+        },
+        "Schedule": {
+          "type": "string",
+          "description": "Optional human-readable schedule summary when known"
+        }
+      }
+    },
+    "fare": {
+      "type": "object",
+      "description": "Optional structured fare. Currently unused in source data.",
+      "additionalProperties": false,
+      "properties": {
+        "currency": { "type": "string", "default": "MMK" },
+        "amount_min": { "type": ["number", "null"] },
+        "amount_max": { "type": ["number", "null"] },
+        "notes": { "type": "string" },
+        "source": { "type": "string" },
+        "updated_at": { "type": "string" }
+      }
+    },
+    "schedule": {
+      "type": "object",
+      "description": "Optional structured schedule. Currently unused in source data.",
+      "additionalProperties": false,
+      "properties": {
+        "first_departure": { "type": ["string", "null"] },
+        "last_departure": { "type": ["string", "null"] },
+        "headway_minutes": { "type": ["number", "null"] },
+        "days": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["mon", "tue", "wed", "thu", "fri", "sat", "sun", "daily"]
+          }
+        },
+        "notes": { "type": "string" },
+        "source": { "type": "string" },
+        "updated_at": { "type": "string" }
       }
     },
     "direction_meta": {

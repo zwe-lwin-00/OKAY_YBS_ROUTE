@@ -70,7 +70,7 @@ export function NearbyClient({ routes }: NearbyClientProps) {
 
   return (
     <div>
-      <div className="rounded-3xl border border-line bg-white/65 p-5 shadow-[var(--shadow)] backdrop-blur">
+      <div className="surface p-5">
         <h1 className="font-[family-name:var(--font-syne)] text-2xl font-bold text-ink">
           {t("nearby_stops")}
         </h1>
@@ -96,7 +96,7 @@ export function NearbyClient({ routes }: NearbyClientProps) {
 
       {status === "ready" ? (
         results.length ? (
-          <div className="mt-5 overflow-hidden rounded-3xl border border-line bg-white/55 px-3 backdrop-blur">
+          <div className="mt-5 overflow-hidden surface-quiet px-3 backdrop-blur">
             {results.map((stop) => (
               <Link
                 key={`${stop.slug}-${stop.index}-${stop.distanceMeters}`}

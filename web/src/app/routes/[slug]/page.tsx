@@ -38,7 +38,7 @@ export default async function RouteDetailPage({ params }: PageProps) {
       </div>
 
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-start">
-        <section className="rounded-3xl border border-line bg-white/65 p-5 shadow-[var(--shadow)] backdrop-blur">
+        <section className="surface p-5">
           <div className="flex flex-wrap items-start gap-3">
             <span className="grid h-14 min-w-14 place-items-center rounded-2xl bg-brand px-3 text-lg font-bold text-white">
               {summary.route_name}

@@ -92,23 +92,34 @@ def export_csv(root: Path, out_dir: Path) -> tuple[Path, Path]:
                 "pattern",
                 "outbound_label",
                 "inbound_label",
+                "fare_notes",
+                "schedule_notes",
+                "has_fare_object",
+                "has_schedule_object",
             ],
         )
         w.writeheader()
         for entry in catalog["routes"]:
             data = load_route(root, entry["data_file"])
             meta = data.get("direction_meta") or {}
+            ri = data.get("route_info") or {}
+            fare = data.get("fare") or {}
+            schedule = data.get("schedule") or {}
             w.writerow(
                 {
                     "bus_line": data["bus_line"],
-                    "line_name": data["route_info"].get("Line Name", ""),
-                    "agency": data["route_info"].get("Agency", ""),
-                    "qr_payment": data["route_info"].get("QR Payment", ""),
+                    "line_name": ri.get("Line Name", ""),
+                    "agency": ri.get("Agency", ""),
+                    "qr_payment": ri.get("QR Payment", ""),
                     "total_stops": len(data["stops"]),
                     "data_file": entry["data_file"],
                     "pattern": meta.get("pattern", ""),
                     "outbound_label": meta.get("outbound_label", ""),
                     "inbound_label": meta.get("inbound_label", ""),
+                    "fare_notes": ri.get("Fare") or fare.get("notes") or "",
+                    "schedule_notes": ri.get("Schedule") or schedule.get("notes") or "",
+                    "has_fare_object": "1" if data.get("fare") else "0",
+                    "has_schedule_object": "1" if data.get("schedule") else "0",
                 }
             )
 

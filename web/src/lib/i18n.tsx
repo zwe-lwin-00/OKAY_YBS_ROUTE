@@ -33,7 +33,7 @@ const messages = {
     home_aside:
       "Search by line number or stop name (EN/MM). Works on phones, tablets, and computers.",
     bullet_routes: "{n} YBS routes from open data",
-    bullet_planner: "A→B planner with up to 2 transfers",
+    bullet_planner: "A→B planner with up to 3 transfers + walk tuning",
     bullet_maps: "Stop maps with OpenStreetMap",
     bullet_static: "Static data — not live bus tracking",
     footer_note: "Static YBS route data — not live tracking. Verify before travel.",
@@ -92,7 +92,7 @@ const messages = {
     home_aside:
       "လိုင်းနံပါတ် သို့မဟုတ် မှတ်တိုင်နာမည် (EN/MM) ဖြင့် ရှာနိုင်သည်။ ဖုန်း၊ တက်ဘလက်၊ ကွန်ပျူတာ အားလုံးတွင် သုံးနိုင်သည်။",
     bullet_routes: "open data မှ YBS လိုင်း {n} ခု",
-    bullet_planner: "A→B လမ်းရှာ (၂ ခါလဲအထိ)",
+    bullet_planner: "A→B လမ်းရှာ (၃ ခါလဲအထိ + လမ်းလျှောက်ချိန်)",
     bullet_maps: "OpenStreetMap ဖြင့် မှတ်တိုင်မြေပုံ",
     bullet_static: "Static data — live tracking မဟုတ်",
     footer_note:

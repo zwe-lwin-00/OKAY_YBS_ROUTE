@@ -7,28 +7,29 @@ export function LanguageToggle() {
 
   return (
     <div
-      className="inline-flex items-center rounded-full border border-line bg-white/70 p-1"
+      className="inline-flex items-center rounded-full border border-line bg-bg-elevated p-0.5 shadow-[var(--shadow-sm)]"
       role="group"
       aria-label={t("language")}
     >
-      <button
-        type="button"
-        onClick={() => setLocale("en")}
-        className={`min-h-9 rounded-full px-3 text-xs font-bold transition ${
-          locale === "en" ? "bg-brand text-white" : "text-ink-soft"
-        }`}
-      >
-        EN
-      </button>
-      <button
-        type="button"
-        onClick={() => setLocale("mm")}
-        className={`min-h-9 rounded-full px-3 text-xs font-bold transition ${
-          locale === "mm" ? "bg-brand text-white" : "text-ink-soft"
-        }`}
-      >
-        မြန်
-      </button>
+      {(
+        [
+          ["en", "EN"],
+          ["mm", "မြန်"],
+        ] as const
+      ).map(([code, label]) => (
+        <button
+          key={code}
+          type="button"
+          onClick={() => setLocale(code)}
+          className={`min-h-8 rounded-full px-2.5 text-[0.7rem] font-bold tracking-wide transition ${
+            locale === code
+              ? "bg-ink text-white"
+              : "text-ink-faint hover:text-ink-soft"
+          }`}
+        >
+          {label}
+        </button>
+      ))}
     </div>
   );
 }

@@ -26,7 +26,7 @@ export function FavoriteRouteButton({ route }: { route: RouteSummary }) {
         setOn(isFavoriteRoute(route.slug));
       }}
       className={`inline-flex min-h-10 items-center gap-1 rounded-full px-3 text-xs font-bold transition ${
-        on ? "bg-accent text-accent-ink" : "border border-line bg-white/80 text-ink-soft"
+        on ? "bg-accent text-accent-ink" : "border border-line bg-bg-elevated text-ink-soft"
       }`}
       aria-pressed={on}
     >
@@ -52,7 +52,7 @@ export function FavoriteStopButton({ stop }: { stop: StopPlace }) {
         setOn(isFavoriteStop(stop.id));
       }}
       className={`inline-flex min-h-10 items-center gap-1 rounded-full px-3 text-xs font-bold transition ${
-        on ? "bg-accent text-accent-ink" : "border border-line bg-white/80 text-ink-soft"
+        on ? "bg-accent text-accent-ink" : "border border-line bg-bg-elevated text-ink-soft"
       }`}
       aria-pressed={on}
     >

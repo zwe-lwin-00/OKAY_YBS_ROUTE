@@ -10,7 +10,7 @@ export const metadata = {
 
 function PlanFallback() {
   return (
-    <div className="rounded-3xl border border-line bg-white/65 p-5 text-sm text-ink-soft">
+    <div className="surface p-5 text-sm text-ink-soft">
       Loading planner…
     </div>
   );

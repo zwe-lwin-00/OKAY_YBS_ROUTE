@@ -4,10 +4,13 @@
 
 > **သတိပြုရန်:** ဤ repository သည် static data files များပေးထားခြင်းသာဖြစ်ပြီး hosted API server, live bus tracking သို့မဟုတ် real-time arrival times မပါဝင်ပါ။ Raw GitHub URL များကို API endpoint ကဲ့သို့ fetch လုပ်နိုင်သော်လည်း production အသုံးပြုမှုအတွက် ကိုယ်ပိုင် backend/cache တည်ဆောက်ရန် အကြံပြုသည်။ လမ်းကြောင်းနှင့် မှတ်တိုင်အချက်အလက်များ ပြောင်းလဲနိုင်သောကြောင့် အသုံးမပြုမီ အတည်ပြုပါ။
 
+**GitHub:** https://github.com/zwe-lwin-00/OKAY_YBS_ROUTE
+
 ## ပါဝင်သည့်အချက်အလက်
 
 - `ybs_*_data.json` — bus route တစ်ခုစီအတွက် JSON data (အောက်ပါ catalog တွင် လက်ရှိဖိုင် 146 ခုစာရင်းပြုထားသည်)
 - `api/routes.json` — route catalog နှင့် ဖိုင်တစ်ခုချင်း၏ raw URL
+- Optional (schema-ready, mostly empty today): `fare`, `schedule` on route files / `Fare`, `Schedule` in `route_info`
 
 ဖိုင်အမည်များတွင် route အလိုက် ကွဲပြားသည့် suffix များ ပါနိုင်သည် (ဥပမာ `ybs_111_industrial_zone_data.json`)။ ထို့ကြောင့် route number ဖြင့်ဖိုင်အမည်ကို ခန့်မှန်းမည့်အစား `api/routes.json` ကိုသုံးပါ။
 
@@ -24,6 +27,9 @@
     "Total Stops": "104 stops",
     "QR Payment": "✅ Supported"
   },
+  "direction_meta": { "pattern": "out_and_back", "apex_index": 50 },
+  "fare": null,
+  "schedule": null,
   "stops": [
     {
       "index": "1",
@@ -31,7 +37,9 @@
       "stop_name_mm": "ကျီစုသုဿန်",
       "road": "...",
       "latitude": 16.874687,
-      "longitude": 96.280012
+      "longitude": 96.280012,
+      "direction": "outbound",
+      "lane": "unspecified"
     }
   ]
 }
@@ -39,25 +47,27 @@
 
 `route_info` ထဲက key အမည်များသည် လက်ရှိ data အတိုင်း space ပါသော English keys ဖြစ်သည်။ `Total Stops` သည် text ဖြစ်နိုင်သောကြောင့် stop အရေအတွက်ကိုတွက်ရာတွင် `stops.length` ကိုအသုံးပြုပါ။ Latitude/longitude တန်ဖိုးများသည် number ဖြစ်သည်။
 
+**Fare / schedule:** လက်ရှိ route ဖိုင်များတွင် structured fare/timetable မပါသေးပါ။ Schema တွင် optional `fare` / `schedule` objects ကို ကြိုတင်သတ်မှတ်ထားသည် — ဒေတာရရှိမှ ဖြည့်နိုင်သည်။
+
 ## Static JSON API အသုံးပြုပုံ
 
 Catalog endpoint (GitHub raw):
 
 ```text
-https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/api/routes.json
+https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/api/routes.json
 ```
 
 Route data URL များကို catalog ၏ `routes[].data_url` မှ ရယူပါ။ ဥပမာ route `100` အတွက်:
 
 ```text
-https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_100_data.json
+https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_100_data.json
 ```
 
 ### JavaScript / Web / App
 
 ```js
 const catalogUrl =
-  "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/api/routes.json";
+  "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/api/routes.json";
 
 const catalog = await fetch(catalogUrl).then((r) => {
   if (!r.ok) throw new Error(`HTTP ${r.status}`);
@@ -75,7 +85,7 @@ console.log(routeData.route_info, routeData.stops);
 ```python
 import requests
 
-catalog_url = "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/api/routes.json"
+catalog_url = "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/api/routes.json"
 catalog = requests.get(catalog_url, timeout=20).json()
 route = next(item for item in catalog["routes"] if item["bus_line"] == "100")
 data = requests.get(route["data_url"], timeout=20).json()
@@ -94,8 +104,8 @@ for stop in data["stops"]:
 ## Local အသုံးပြုခြင်း
 
 ```bash
-git clone https://github.com/hidecard/YBS-Bus-Data.git
-cd YBS-Bus-Data
+git clone https://github.com/zwe-lwin-00/OKAY_YBS_ROUTE.git
+cd OKAY_YBS_ROUTE
 ```
 
 လိုအပ်သည့် `ybs_..._data.json` ဖိုင်ကို တိုက်ရိုက်ဖတ်နိုင်သည်၊ သို့မဟုတ် catalog မှ ဖိုင်အမည်/URL ကိုရှာနိုင်သည်။ Python 3 standard library ဖြင့် စစ်ဆေးရန်:
@@ -111,23 +121,27 @@ python -m json.tool ybs_100_data.json
 - GitHub raw content ကို production API အဖြစ် အသုံးပြုရာတွင် availability/rate limit အာမခံမရှိပါ။ လိုအပ်ပါက ကိုယ်ပိုင် mirror, cache သို့မဟုတ် API server အသုံးပြုပါ။
 - အချက်အလက်ကို လုံခြုံရေးအရေးကြီးသည့် ဆုံးဖြတ်ချက်အတွက် တစ်ခုတည်းသောရင်းမြစ်အဖြစ် မသုံးပါနှင့်။
 
-### Validation / schemas / exports
+### Validation / schemas / exports / CI
 
 ```bash
 pip install -r tools/requirements.txt
 python tools/validate_data.py
+python tools/audit_data.py --fail-on-error
 python tools/enrich_directions.py          # add direction/lane fields
 python tools/export_formats.py --format all  # writes ./exports
 ```
 
-- Schemas: `schemas/`
-- CI: `.github/workflows/validate-data.yml`
+- Schemas: `schemas/` (includes optional `fare` / `schedule`)
+- CI validate: `.github/workflows/validate-data.yml` (push/PR)
+- Export release artifacts: `.github/workflows/release-exports.yml` (`v*` tags or manual)
 - Route files include optional `direction_meta` plus per-stop `direction`, `lane`, `opposite_stop_index`
-- Exports (generated, gitignored): GeoJSON, CSV, GTFS-lite zip
+- Exports (generated, gitignored): GeoJSON, CSV, GTFS-lite zip + audit report on release
+
+Web app (YBS Finder): see `web/`.
 
 ## ပါဝင်ကူညီခြင်း
 
-JSON ဖိုင်အသစ်ထည့်ခြင်း/ပြင်ဆင်ခြင်းမပြုမီ `python tools/validate_data.py` ဖြင့် schema + consistency စစ်ပါ။ stop index အစဉ်၊ latitude/longitude number ဖြစ်မှုနှင့် JSON validity ကို အတည်ပြုပါ။ Pull Request တွင် ပြောင်းလဲသည့် route၊ source/verification date နှင့် သတိပြုစရာများကို ရှင်းပြပါ။
+JSON ဖိုင်အသစ်ထည့်ခြင်း/ပြင်ဆင်ခြင်းမပြုမီ `python tools/validate_data.py` နှင့် `python tools/audit_data.py --fail-on-error` ဖြင့် schema + consistency + naming/coord စစ်ပါ။ stop index အစဉ်၊ latitude/longitude number ဖြစ်မှုနှင့် JSON validity ကို အတည်ပြုပါ။ Pull Request တွင် ပြောင်းလဲသည့် route၊ source/verification date နှင့် သတိပြုစရာများကို ရှင်းပြပါ။
 
 ## License / Attribution
 
@@ -135,4 +149,4 @@ JSON ဖိုင်အသစ်ထည့်ခြင်း/ပြင်ဆင�
 
 ## English summary
 
-Static JSON dataset for Yangon Bus Service (YBS) routes and stops. Route records include route metadata and ordered stops with English/Myanmar names and coordinates. Use `api/routes.json` as the route catalog and fetch each record's `data_url`. This repository does not provide a hosted API, live tracking, or real-time arrivals. Verify the repository license and data accuracy before production use.
+Static JSON dataset for Yangon Bus Service (YBS) routes and stops, hosted at `zwe-lwin-00/OKAY_YBS_ROUTE`. Use `api/routes.json` as the catalog and each record's `data_url`. Optional `fare` / `schedule` fields are schema-ready but not populated yet. CI validates on every push/PR; tagged releases publish GeoJSON/CSV/GTFS-lite exports as artifacts. This repository does not provide live tracking.

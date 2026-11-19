@@ -64,3 +64,21 @@ export async function searchRoutes(query: string): Promise<RouteSummary[]> {
     return hay.includes(q);
   });
 }
+
+export function clearDataCaches() {
+  catalogCache = null;
+  routeCache.clear();
+}
+
+export function getDataRoot() {
+  return DATA_ROOT;
+}
+
+export async function writeRouteData(
+  slug: string,
+  data: RouteData,
+): Promise<void> {
+  const filePath = path.join(DATA_ROOT, slugToDataFile(slug));
+  await fs.writeFile(filePath, `${JSON.stringify(data, null, 2)}\n`, "utf8");
+  routeCache.delete(slug);
+}

@@ -85,7 +85,7 @@ export function StopSearchPage({ initialStopId }: { initialStopId?: string }) {
       ) : null}
 
       {stop ? (
-        <div className="mt-5 rounded-3xl border border-line bg-white/65 p-4 shadow-[var(--shadow)] backdrop-blur">
+        <div className="mt-5 surface p-4 shadow-[var(--shadow)] backdrop-blur">
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div className="min-w-0">
               <p className="font-[family-name:var(--font-syne)] text-xl font-bold">
@@ -104,7 +104,7 @@ export function StopSearchPage({ initialStopId }: { initialStopId?: string }) {
             <div className="flex flex-wrap gap-2">
               <FavoriteStopButton stop={stop} />
               <Link
-                href={`/plan?from=${encodeURIComponent(stop.id)}`}
+                      href={`/plan?from=${encodeURIComponent(stop.short_id || stop.id)}`}
                 className="inline-flex min-h-10 items-center rounded-full border border-line bg-white px-3 text-xs font-bold text-ink-soft"
               >
                 {t("use_in_planner")}
@@ -128,7 +128,7 @@ export function StopSearchPage({ initialStopId }: { initialStopId?: string }) {
             {t("routes_through")} · {t("routes_count", { n: routes.length })}
           </p>
           {routes.length ? (
-            <div className="overflow-hidden rounded-3xl border border-line bg-white/55 px-3 backdrop-blur">
+            <div className="overflow-hidden surface-quiet px-3 backdrop-blur">
               {routes.map((route) => (
                 <Link
                   key={route.slug}

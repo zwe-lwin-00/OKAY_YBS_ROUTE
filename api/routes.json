@@ -2,8 +2,8 @@
   "api_name": "YBS Bus Data Static JSON API",
   "api_version": "1.0.0",
   "description": "Static JSON catalog of YBS bus route data. Each data_url points to the corresponding route JSON file.",
-  "source_repository": "https://github.com/hidecard/YBS-Bus-Data",
-  "base_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/",
+  "source_repository": "https://github.com/zwe-lwin-00/OKAY_YBS_ROUTE",
+  "base_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/",
   "route_count": 146,
   "routes": [
     {
@@ -15,7 +15,7 @@
       "total_stops": 104,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_100_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_100_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_100_data.json"
     },
     {
       "bus_line": "103",
@@ -26,7 +26,7 @@
       "total_stops": 156,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_103_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_103_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_103_data.json"
     },
     {
       "bus_line": "104",
@@ -37,7 +37,7 @@
       "total_stops": 73,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_104_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_104_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_104_data.json"
     },
     {
       "bus_line": "105",
@@ -48,7 +48,7 @@
       "total_stops": 187,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_105_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_105_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_105_data.json"
     },
     {
       "bus_line": "106",
@@ -59,7 +59,7 @@
       "total_stops": 298,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_106_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_106_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_106_data.json"
     },
     {
       "bus_line": "107",
@@ -70,7 +70,7 @@
       "total_stops": 166,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_107_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_107_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_107_data.json"
     },
     {
       "bus_line": "108",
@@ -81,7 +81,7 @@
       "total_stops": 109,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_108_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_108_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_108_data.json"
     },
     {
       "bus_line": "109",
@@ -92,7 +92,7 @@
       "total_stops": 121,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_109_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_109_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_109_data.json"
     },
     {
       "bus_line": "10",
@@ -103,7 +103,7 @@
       "total_stops": 132,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_10_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_10_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_10_data.json"
     },
     {
       "bus_line": "110",
@@ -114,7 +114,7 @@
       "total_stops": 120,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_110_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_110_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_110_data.json"
     },
     {
       "bus_line": "111 (Industrial Zone)",
@@ -125,7 +125,7 @@
       "total_stops": 101,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_111_industrial_zone_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_111_industrial_zone_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_111_industrial_zone_data.json"
     },
     {
       "bus_line": "111 (Nat Sin)",
@@ -136,7 +136,7 @@
       "total_stops": 101,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_111_nat_sin_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_111_nat_sin_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_111_nat_sin_data.json"
     },
     {
       "bus_line": "112",
@@ -147,7 +147,7 @@
       "total_stops": 105,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_112_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_112_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_112_data.json"
     },
     {
       "bus_line": "113",
@@ -158,7 +158,7 @@
       "total_stops": 48,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_113_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_113_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_113_data.json"
     },
     {
       "bus_line": "114",
@@ -169,7 +169,7 @@
       "total_stops": 86,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_114_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_114_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_114_data.json"
     },
     {
       "bus_line": "115",
@@ -180,7 +180,7 @@
       "total_stops": 67,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_115_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_115_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_115_data.json"
     },
     {
       "bus_line": "116",
@@ -191,7 +191,7 @@
       "total_stops": 137,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_116_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_116_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_116_data.json"
     },
     {
       "bus_line": "117",
@@ -202,7 +202,7 @@
       "total_stops": 98,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_117_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_117_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_117_data.json"
     },
     {
       "bus_line": "118",
@@ -213,7 +213,7 @@
       "total_stops": 123,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_118_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_118_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_118_data.json"
     },
     {
       "bus_line": "119",
@@ -224,7 +224,7 @@
       "total_stops": 92,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_119_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_119_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_119_data.json"
     },
     {
       "bus_line": "11",
@@ -235,7 +235,7 @@
       "total_stops": 104,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_11_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_11_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_11_data.json"
     },
     {
       "bus_line": "120",
@@ -246,7 +246,7 @@
       "total_stops": 44,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_120_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_120_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_120_data.json"
     },
     {
       "bus_line": "123 (A Phyauk)",
@@ -257,7 +257,7 @@
       "total_stops": 252,
       "qr_payment": "Not available",
       "data_file": "ybs_123_a_phyauk_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_123_a_phyauk_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_123_a_phyauk_data.json"
     },
     {
       "bus_line": "123 (Taikkyi)",
@@ -268,7 +268,7 @@
       "total_stops": 215,
       "qr_payment": "Not available",
       "data_file": "ybs_123_taikkyi_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_123_taikkyi_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_123_taikkyi_data.json"
     },
     {
       "bus_line": "124",
@@ -279,7 +279,7 @@
       "total_stops": 176,
       "qr_payment": "Not available",
       "data_file": "ybs_124_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_124_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_124_data.json"
     },
     {
       "bus_line": "126",
@@ -290,7 +290,7 @@
       "total_stops": 61,
       "qr_payment": "Not available",
       "data_file": "ybs_126_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_126_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_126_data.json"
     },
     {
       "bus_line": "128",
@@ -301,7 +301,7 @@
       "total_stops": 112,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_128_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_128_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_128_data.json"
     },
     {
       "bus_line": "129",
@@ -312,7 +312,7 @@
       "total_stops": 134,
       "qr_payment": "Not available",
       "data_file": "ybs_129_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_129_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_129_data.json"
     },
     {
       "bus_line": "12",
@@ -323,7 +323,7 @@
       "total_stops": 90,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_12_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_12_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_12_data.json"
     },
     {
       "bus_line": "130",
@@ -334,7 +334,7 @@
       "total_stops": 96,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_130_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_130_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_130_data.json"
     },
     {
       "bus_line": "131",
@@ -345,7 +345,7 @@
       "total_stops": 110,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_131_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_131_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_131_data.json"
     },
     {
       "bus_line": "132",
@@ -356,7 +356,7 @@
       "total_stops": 143,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_132_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_132_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_132_data.json"
     },
     {
       "bus_line": "133",
@@ -367,7 +367,7 @@
       "total_stops": 113,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_133_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_133_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_133_data.json"
     },
     {
       "bus_line": "134",
@@ -378,7 +378,7 @@
       "total_stops": 130,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_134_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_134_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_134_data.json"
     },
     {
       "bus_line": "136",
@@ -389,7 +389,7 @@
       "total_stops": 105,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_136_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_136_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_136_data.json"
     },
     {
       "bus_line": "137",
@@ -400,7 +400,7 @@
       "total_stops": 117,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_137_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_137_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_137_data.json"
     },
     {
       "bus_line": "138",
@@ -411,7 +411,7 @@
       "total_stops": 112,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_138_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_138_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_138_data.json"
     },
     {
       "bus_line": "139",
@@ -422,7 +422,7 @@
       "total_stops": 104,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_139_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_139_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_139_data.json"
     },
     {
       "bus_line": "13",
@@ -433,7 +433,7 @@
       "total_stops": 116,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_13_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_13_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_13_data.json"
     },
     {
       "bus_line": "141",
@@ -444,7 +444,7 @@
       "total_stops": 164,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_141_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_141_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_141_data.json"
     },
     {
       "bus_line": "142",
@@ -455,7 +455,7 @@
       "total_stops": 164,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_142_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_142_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_142_data.json"
     },
     {
       "bus_line": "143",
@@ -466,7 +466,7 @@
       "total_stops": 141,
       "qr_payment": "Not available",
       "data_file": "ybs_143_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_143_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_143_data.json"
     },
     {
       "bus_line": "144",
@@ -477,7 +477,7 @@
       "total_stops": 139,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_144_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_144_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_144_data.json"
     },
     {
       "bus_line": "145",
@@ -488,7 +488,7 @@
       "total_stops": 184,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_145_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_145_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_145_data.json"
     },
     {
       "bus_line": "14",
@@ -499,7 +499,7 @@
       "total_stops": 94,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_14_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_14_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_14_data.json"
     },
     {
       "bus_line": "15",
@@ -510,7 +510,7 @@
       "total_stops": 122,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_15_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_15_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_15_data.json"
     },
     {
       "bus_line": "16",
@@ -521,7 +521,7 @@
       "total_stops": 102,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_16_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_16_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_16_data.json"
     },
     {
       "bus_line": "17",
@@ -532,7 +532,7 @@
       "total_stops": 88,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_17_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_17_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_17_data.json"
     },
     {
       "bus_line": "18",
@@ -543,7 +543,7 @@
       "total_stops": 132,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_18_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_18_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_18_data.json"
     },
     {
       "bus_line": "APS",
@@ -554,7 +554,7 @@
       "total_stops": 70,
       "qr_payment": "Not available",
       "data_file": "ybs_197_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_197_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_197_data.json"
     },
     {
       "bus_line": "Sula - Dala",
@@ -565,7 +565,7 @@
       "total_stops": 20,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_199_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_199_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_199_data.json"
     },
     {
       "bus_line": "19",
@@ -576,7 +576,7 @@
       "total_stops": 139,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_19_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_19_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_19_data.json"
     },
     {
       "bus_line": "1",
@@ -587,7 +587,7 @@
       "total_stops": 236,
       "qr_payment": "Not available",
       "data_file": "ybs_1_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_1_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_1_data.json"
     },
     {
       "bus_line": "Botahtaung - Dala",
@@ -598,7 +598,7 @@
       "total_stops": 43,
       "qr_payment": "Not available",
       "data_file": "ybs_200_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_200_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_200_data.json"
     },
     {
       "bus_line": "Sula - Dala (ကြိုဆိုပါ၏)",
@@ -609,7 +609,7 @@
       "total_stops": 20,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_202_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_202_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_202_data.json"
     },
     {
       "bus_line": "Dala - Twante",
@@ -620,7 +620,7 @@
       "total_stops": 46,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_204_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_204_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_204_data.json"
     },
     {
       "bus_line": "Dala Ferry Terminal - Sule",
@@ -631,7 +631,7 @@
       "total_stops": 23,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_205_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_205_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_205_data.json"
     },
     {
       "bus_line": "20",
@@ -642,7 +642,7 @@
       "total_stops": 124,
       "qr_payment": "Not available",
       "data_file": "ybs_20_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_20_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_20_data.json"
     },
     {
       "bus_line": "21",
@@ -653,7 +653,7 @@
       "total_stops": 107,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_21_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_21_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_21_data.json"
     },
     {
       "bus_line": "22",
@@ -664,7 +664,7 @@
       "total_stops": 113,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_22_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_22_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_22_data.json"
     },
     {
       "bus_line": "23",
@@ -675,7 +675,7 @@
       "total_stops": 81,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_23_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_23_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_23_data.json"
     },
     {
       "bus_line": "24",
@@ -686,7 +686,7 @@
       "total_stops": 89,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_24_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_24_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_24_data.json"
     },
     {
       "bus_line": "25",
@@ -697,7 +697,7 @@
       "total_stops": 101,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_25_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_25_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_25_data.json"
     },
     {
       "bus_line": "26",
@@ -708,7 +708,7 @@
       "total_stops": 110,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_26_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_26_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_26_data.json"
     },
     {
       "bus_line": "27",
@@ -719,7 +719,7 @@
       "total_stops": 141,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_27_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_27_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_27_data.json"
     },
     {
       "bus_line": "28",
@@ -730,7 +730,7 @@
       "total_stops": 93,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_28_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_28_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_28_data.json"
     },
     {
       "bus_line": "29",
@@ -741,7 +741,7 @@
       "total_stops": 104,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_29_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_29_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_29_data.json"
     },
     {
       "bus_line": "2",
@@ -752,7 +752,7 @@
       "total_stops": 132,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_2_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_2_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_2_data.json"
     },
     {
       "bus_line": "30",
@@ -763,7 +763,7 @@
       "total_stops": 128,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_30_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_30_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_30_data.json"
     },
     {
       "bus_line": "31",
@@ -774,7 +774,7 @@
       "total_stops": 95,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_31_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_31_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_31_data.json"
     },
     {
       "bus_line": "31 (Thilawa Housing)",
@@ -785,7 +785,7 @@
       "total_stops": 104,
       "qr_payment": "Not available",
       "data_file": "ybs_31_thilawa_housing_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_31_thilawa_housing_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_31_thilawa_housing_data.json"
     },
     {
       "bus_line": "32",
@@ -796,7 +796,7 @@
       "total_stops": 196,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_32_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_32_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_32_data.json"
     },
     {
       "bus_line": "33",
@@ -807,7 +807,7 @@
       "total_stops": 136,
       "qr_payment": "Not available",
       "data_file": "ybs_33_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_33_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_33_data.json"
     },
     {
       "bus_line": "34 (Kayan)",
@@ -818,7 +818,7 @@
       "total_stops": 244,
       "qr_payment": "Not available",
       "data_file": "ybs_34_kayan_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_34_kayan_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_34_kayan_data.json"
     },
     {
       "bus_line": "34 (Thone Gwa)",
@@ -829,7 +829,7 @@
       "total_stops": 198,
       "qr_payment": "Not available",
       "data_file": "ybs_34_thone_gwa_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_34_thone_gwa_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_34_thone_gwa_data.json"
     },
     {
       "bus_line": "35",
@@ -840,7 +840,7 @@
       "total_stops": 132,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_35_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_35_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_35_data.json"
     },
     {
       "bus_line": "36",
@@ -851,7 +851,7 @@
       "total_stops": 81,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_36_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_36_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_36_data.json"
     },
     {
       "bus_line": "37",
@@ -862,7 +862,7 @@
       "total_stops": 114,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_37_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_37_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_37_data.json"
     },
     {
       "bus_line": "38",
@@ -873,7 +873,7 @@
       "total_stops": 67,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_38_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_38_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_38_data.json"
     },
     {
       "bus_line": "39",
@@ -884,7 +884,7 @@
       "total_stops": 142,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_39_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_39_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_39_data.json"
     },
     {
       "bus_line": "3",
@@ -895,7 +895,7 @@
       "total_stops": 118,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_3_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_3_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_3_data.json"
     },
     {
       "bus_line": "40",
@@ -906,7 +906,7 @@
       "total_stops": 124,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_40_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_40_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_40_data.json"
     },
     {
       "bus_line": "41",
@@ -917,7 +917,7 @@
       "total_stops": 198,
       "qr_payment": "Not available",
       "data_file": "ybs_41_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_41_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_41_data.json"
     },
     {
       "bus_line": "42",
@@ -928,7 +928,7 @@
       "total_stops": 202,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_42_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_42_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_42_data.json"
     },
     {
       "bus_line": "43",
@@ -939,7 +939,7 @@
       "total_stops": 99,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_43_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_43_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_43_data.json"
     },
     {
       "bus_line": "44",
@@ -950,7 +950,7 @@
       "total_stops": 125,
       "qr_payment": "Not available",
       "data_file": "ybs_44_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_44_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_44_data.json"
     },
     {
       "bus_line": "45",
@@ -961,7 +961,7 @@
       "total_stops": 134,
       "qr_payment": "Not available",
       "data_file": "ybs_45_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_45_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_45_data.json"
     },
     {
       "bus_line": "46",
@@ -972,7 +972,7 @@
       "total_stops": 178,
       "qr_payment": "Not available",
       "data_file": "ybs_46_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_46_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_46_data.json"
     },
     {
       "bus_line": "4",
@@ -983,7 +983,7 @@
       "total_stops": 86,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_4_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_4_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_4_data.json"
     },
     {
       "bus_line": "52",
@@ -994,7 +994,7 @@
       "total_stops": 62,
       "qr_payment": "Not available",
       "data_file": "ybs_52_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_52_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_52_data.json"
     },
     {
       "bus_line": "53 (Meekwet Zay)",
@@ -1005,7 +1005,7 @@
       "total_stops": 51,
       "qr_payment": "Not available",
       "data_file": "ybs_53_meekwet_zay_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_53_meekwet_zay_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_53_meekwet_zay_data.json"
     },
     {
       "bus_line": "53 (Yone Shay)",
@@ -1016,7 +1016,7 @@
       "total_stops": 38,
       "qr_payment": "Not available",
       "data_file": "ybs_53_yone_shay_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_53_yone_shay_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_53_yone_shay_data.json"
     },
     {
       "bus_line": "55",
@@ -1027,7 +1027,7 @@
       "total_stops": 106,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_55_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_55_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_55_data.json"
     },
     {
       "bus_line": "56",
@@ -1038,7 +1038,7 @@
       "total_stops": 24,
       "qr_payment": "Not available",
       "data_file": "ybs_56_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_56_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_56_data.json"
     },
     {
       "bus_line": "57",
@@ -1049,7 +1049,7 @@
       "total_stops": 27,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_57_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_57_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_57_data.json"
     },
     {
       "bus_line": "58",
@@ -1060,7 +1060,7 @@
       "total_stops": 28,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_58_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_58_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_58_data.json"
     },
     {
       "bus_line": "59",
@@ -1071,7 +1071,7 @@
       "total_stops": 124,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_59_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_59_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_59_data.json"
     },
     {
       "bus_line": "5",
@@ -1082,7 +1082,7 @@
       "total_stops": 107,
       "qr_payment": "Not available",
       "data_file": "ybs_5_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_5_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_5_data.json"
     },
     {
       "bus_line": "60",
@@ -1093,7 +1093,7 @@
       "total_stops": 123,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_60_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_60_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_60_data.json"
     },
     {
       "bus_line": "60 (Mini Bus)",
@@ -1104,7 +1104,7 @@
       "total_stops": 103,
       "qr_payment": "Not available",
       "data_file": "ybs_60_mini_bus_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_60_mini_bus_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_60_mini_bus_data.json"
     },
     {
       "bus_line": "61",
@@ -1115,7 +1115,7 @@
       "total_stops": 93,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_61_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_61_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_61_data.json"
     },
     {
       "bus_line": "62",
@@ -1126,7 +1126,7 @@
       "total_stops": 105,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_62_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_62_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_62_data.json"
     },
     {
       "bus_line": "63",
@@ -1137,7 +1137,7 @@
       "total_stops": 70,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_63_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_63_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_63_data.json"
     },
     {
       "bus_line": "64 (Khe Mar Thi Rd.)",
@@ -1148,7 +1148,7 @@
       "total_stops": 92,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_64_khe_mar_thi_rd_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_64_khe_mar_thi_rd_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_64_khe_mar_thi_rd_data.json"
     },
     {
       "bus_line": "64 (Thu Dhamma Rd.)",
@@ -1159,7 +1159,7 @@
       "total_stops": 88,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_64_thu_dhamma_rd_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_64_thu_dhamma_rd_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_64_thu_dhamma_rd_data.json"
     },
     {
       "bus_line": "65",
@@ -1170,7 +1170,7 @@
       "total_stops": 175,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_65_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_65_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_65_data.json"
     },
     {
       "bus_line": "66",
@@ -1181,7 +1181,7 @@
       "total_stops": 132,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_66_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_66_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_66_data.json"
     },
     {
       "bus_line": "67",
@@ -1192,7 +1192,7 @@
       "total_stops": 39,
       "qr_payment": "Not available",
       "data_file": "ybs_67_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_67_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_67_data.json"
     },
     {
       "bus_line": "68",
@@ -1203,7 +1203,7 @@
       "total_stops": 112,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_68_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_68_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_68_data.json"
     },
     {
       "bus_line": "6",
@@ -1214,7 +1214,7 @@
       "total_stops": 159,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_6_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_6_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_6_data.json"
     },
     {
       "bus_line": "70",
@@ -1225,7 +1225,7 @@
       "total_stops": 123,
       "qr_payment": "Not available",
       "data_file": "ybs_70_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_70_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_70_data.json"
     },
     {
       "bus_line": "70 (Mini Bus)",
@@ -1236,7 +1236,7 @@
       "total_stops": 118,
       "qr_payment": "Not available",
       "data_file": "ybs_70_mini_bus_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_70_mini_bus_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_70_mini_bus_data.json"
     },
     {
       "bus_line": "71",
@@ -1247,7 +1247,7 @@
       "total_stops": 102,
       "qr_payment": "Not available",
       "data_file": "ybs_71_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_71_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_71_data.json"
     },
     {
       "bus_line": "72",
@@ -1258,7 +1258,7 @@
       "total_stops": 67,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_72_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_72_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_72_data.json"
     },
     {
       "bus_line": "74",
@@ -1269,7 +1269,7 @@
       "total_stops": 78,
       "qr_payment": "Not available",
       "data_file": "ybs_74_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_74_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_74_data.json"
     },
     {
       "bus_line": "75",
@@ -1280,7 +1280,7 @@
       "total_stops": 84,
       "qr_payment": "Not available",
       "data_file": "ybs_75_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_75_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_75_data.json"
     },
     {
       "bus_line": "76",
@@ -1291,7 +1291,7 @@
       "total_stops": 137,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_76_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_76_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_76_data.json"
     },
     {
       "bus_line": "77",
@@ -1302,7 +1302,7 @@
       "total_stops": 132,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_77_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_77_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_77_data.json"
     },
     {
       "bus_line": "78",
@@ -1313,7 +1313,7 @@
       "total_stops": 124,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_78_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_78_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_78_data.json"
     },
     {
       "bus_line": "79",
@@ -1324,7 +1324,7 @@
       "total_stops": 154,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_79_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_79_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_79_data.json"
     },
     {
       "bus_line": "7 (Industrial Zone)",
@@ -1335,7 +1335,7 @@
       "total_stops": 103,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_7_industrial_zone_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_7_industrial_zone_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_7_industrial_zone_data.json"
     },
     {
       "bus_line": "7 (Nat Sin)",
@@ -1346,7 +1346,7 @@
       "total_stops": 95,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_7_nat_sin_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_7_nat_sin_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_7_nat_sin_data.json"
     },
     {
       "bus_line": "81",
@@ -1357,7 +1357,7 @@
       "total_stops": 115,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_81_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_81_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_81_data.json"
     },
     {
       "bus_line": "82",
@@ -1368,7 +1368,7 @@
       "total_stops": 99,
       "qr_payment": "Not available",
       "data_file": "ybs_82_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_82_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_82_data.json"
     },
     {
       "bus_line": "83",
@@ -1379,7 +1379,7 @@
       "total_stops": 128,
       "qr_payment": "Not available",
       "data_file": "ybs_83_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_83_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_83_data.json"
     },
     {
       "bus_line": "84",
@@ -1390,7 +1390,7 @@
       "total_stops": 110,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_84_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_84_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_84_data.json"
     },
     {
       "bus_line": "85",
@@ -1401,7 +1401,7 @@
       "total_stops": 163,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_85_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_85_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_85_data.json"
     },
     {
       "bus_line": "86",
@@ -1412,7 +1412,7 @@
       "total_stops": 131,
       "qr_payment": "Not available",
       "data_file": "ybs_86_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_86_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_86_data.json"
     },
     {
       "bus_line": "87",
@@ -1423,7 +1423,7 @@
       "total_stops": 101,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_87_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_87_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_87_data.json"
     },
     {
       "bus_line": "88",
@@ -1434,7 +1434,7 @@
       "total_stops": 125,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_88_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_88_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_88_data.json"
     },
     {
       "bus_line": "89 (Min Nanda Rd.)",
@@ -1445,7 +1445,7 @@
       "total_stops": 83,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_89_min_nanda_rd_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_89_min_nanda_rd_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_89_min_nanda_rd_data.json"
     },
     {
       "bus_line": "89 (Myin Taw Thar Rd.)",
@@ -1456,7 +1456,7 @@
       "total_stops": 94,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_89_myin_taw_thar_rd_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_89_myin_taw_thar_rd_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_89_myin_taw_thar_rd_data.json"
     },
     {
       "bus_line": "89 (National Cancer Institute)",
@@ -1467,7 +1467,7 @@
       "total_stops": 32,
       "qr_payment": "Not available",
       "data_file": "ybs_89_national_cancer_institute_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_89_national_cancer_institute_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_89_national_cancer_institute_data.json"
     },
     {
       "bus_line": "8",
@@ -1478,7 +1478,7 @@
       "total_stops": 126,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_8_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_8_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_8_data.json"
     },
     {
       "bus_line": "90",
@@ -1489,7 +1489,7 @@
       "total_stops": 283,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_90_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_90_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_90_data.json"
     },
     {
       "bus_line": "91",
@@ -1500,7 +1500,7 @@
       "total_stops": 221,
       "qr_payment": "Not available",
       "data_file": "ybs_91_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_91_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_91_data.json"
     },
     {
       "bus_line": "92",
@@ -1511,7 +1511,7 @@
       "total_stops": 129,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_92_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_92_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_92_data.json"
     },
     {
       "bus_line": "93",
@@ -1522,7 +1522,7 @@
       "total_stops": 120,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_93_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_93_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_93_data.json"
     },
     {
       "bus_line": "94",
@@ -1533,7 +1533,7 @@
       "total_stops": 141,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_94_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_94_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_94_data.json"
     },
     {
       "bus_line": "95",
@@ -1544,7 +1544,7 @@
       "total_stops": 138,
       "qr_payment": "Not available",
       "data_file": "ybs_95_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_95_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_95_data.json"
     },
     {
       "bus_line": "96",
@@ -1555,7 +1555,7 @@
       "total_stops": 178,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_96_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_96_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_96_data.json"
     },
     {
       "bus_line": "97",
@@ -1566,7 +1566,7 @@
       "total_stops": 185,
       "qr_payment": "✅ Supported",
       "data_file": "ybs_97_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_97_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_97_data.json"
     },
     {
       "bus_line": "98",
@@ -1577,7 +1577,7 @@
       "total_stops": 103,
       "qr_payment": "Not available",
       "data_file": "ybs_98_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_98_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_98_data.json"
     },
     {
       "bus_line": "99",
@@ -1588,7 +1588,7 @@
       "total_stops": 113,
       "qr_payment": "Not available",
       "data_file": "ybs_99_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_99_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_99_data.json"
     },
     {
       "bus_line": "9 (NYRDDC)",
@@ -1599,7 +1599,7 @@
       "total_stops": 54,
       "qr_payment": "Not available",
       "data_file": "ybs_9_nyrddc_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_9_nyrddc_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_9_nyrddc_data.json"
     },
     {
       "bus_line": "9 (Ward 87)",
@@ -1610,7 +1610,7 @@
       "total_stops": 93,
       "qr_payment": "Not available",
       "data_file": "ybs_9_ward_87_data.json",
-      "data_url": "https://raw.githubusercontent.com/hidecard/YBS-Bus-Data/main/ybs_9_ward_87_data.json"
+      "data_url": "https://raw.githubusercontent.com/zwe-lwin-00/OKAY_YBS_ROUTE/main/ybs_9_ward_87_data.json"
     }
   ]
 }

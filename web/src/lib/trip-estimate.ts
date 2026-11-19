@@ -74,12 +74,21 @@ export function estimatePlan(plan: TripPlan): {
 
 export function enrichPlanEstimates(plan: TripPlan): TripPlan {
   const est = estimatePlan(plan);
+  const minutes = Math.round(est.estimated_minutes);
+  const arrive = new Date(Date.now() + minutes * 60_000);
   return {
     ...plan,
-    estimated_minutes: Math.round(est.estimated_minutes),
+    estimated_minutes: minutes,
     ride_minutes: Math.round(est.ride_minutes),
     walk_minutes: Math.round(est.walk_minutes),
+    estimated_arrive_at: arrive.toISOString(),
+    eta_source: "static_estimate",
   };
+}
+
+export function clampWalkTransferMeters(meters: number): number {
+  if (!Number.isFinite(meters)) return 130;
+  return Math.min(300, Math.max(60, Math.round(meters)));
 }
 
 export function sortPlans(plans: TripPlan[], mode: SortMode): TripPlan[] {

@@ -1,7 +1,12 @@
 import { getRouteBySlug, getRouteSummaries } from "./data";
 import { haversineMeters } from "./geo";
-import { enrichPlanEstimates } from "./trip-estimate";
+import { canonicalPlaceId, shortPlaceId } from "./stop-id";
+import {
+  clampWalkTransferMeters,
+  enrichPlanEstimates,
+} from "./trip-estimate";
 import type {
+  PlanOptions,
   RideDirection,
   RideLeg,
   ServingRoute,
@@ -40,6 +45,7 @@ type RouteSegment = {
 
 type PlaceAgg = {
   id: string;
+  short_id: string;
   name_en: string;
   name_mm: string;
   road: string;
@@ -72,7 +78,7 @@ function gridKey(lat: number, lng: number): string {
 
 function placeId(nameNorm: string, lat: number, lng: number): string {
   // 4 decimals ≈ 11m — keeps opposite curbs as separate selectable places
-  return `${nameNorm || "stop"}@${lat.toFixed(4)},${lng.toFixed(4)}`;
+  return canonicalPlaceId(nameNorm, lat, lng);
 }
 
 function isValidCoord(stop: Stop): boolean {
@@ -229,6 +235,7 @@ async function buildIndex(): Promise<TransitIndex> {
       } else {
         placeMap.set(id, {
           id,
+          short_id: shortPlaceId(id),
           name_en: stop.stop_name_en,
           name_mm: stop.stop_name_mm,
           road: stop.road,
@@ -251,7 +258,12 @@ async function buildIndex(): Promise<TransitIndex> {
   }
 
   const places = [...placeMap.values()];
-  return { segments, places, byId: new Map(places.map((p) => [p.id, p])) };
+  const byId = new Map<string, PlaceAgg>();
+  for (const p of places) {
+    byId.set(p.id, p);
+    byId.set(p.short_id, p);
+  }
+  return { segments, places, byId };
 }
 
 export async function getTransitIndex(): Promise<TransitIndex> {
@@ -345,11 +357,11 @@ function summarize(legs: TripLeg[], transfers: number): string {
     .join(" → ");
   if (transfers === 0) return `Direct: ${lines}`;
   if (transfers === 1) return `1 transfer: ${lines}`;
-  return `2 transfers: ${lines}`;
+  return `${transfers} transfers: ${lines}`;
 }
 
 function finalize(
-  transfers: 0 | 1 | 2,
+  transfers: 0 | 1 | 2 | 3,
   legs: TripLeg[],
   seen: Set<string>,
   out: TripPlan[],
@@ -597,6 +609,7 @@ function toStopPlace(
   const ambiguous = sameName > 1;
   return {
     id: p.id,
+    short_id: p.short_id,
     name_en: p.name_en,
     name_mm: p.name_mm,
     road: p.road,
@@ -623,9 +636,22 @@ function buildNameCounts(places: PlaceAgg[]): Map<string, number> {
 export async function planTrips(
   fromId: string,
   toId: string,
-  maxTransfers: 0 | 1 | 2 = 2,
-  limit = 8,
+  maxTransfersOrOptions: 0 | 1 | 2 | 3 | PlanOptions = 2,
+  limitArg = 8,
 ): Promise<{ from: StopPlace; to: StopPlace; plans: TripPlan[] } | null> {
+  const options: PlanOptions =
+    typeof maxTransfersOrOptions === "object"
+      ? maxTransfersOrOptions
+      : { maxTransfers: maxTransfersOrOptions, limit: limitArg };
+
+  const maxTransfers = ([0, 1, 2, 3].includes(options.maxTransfers as number)
+    ? options.maxTransfers
+    : 2) as 0 | 1 | 2 | 3;
+  const limit = options.limit ?? limitArg;
+  const walkMax = clampWalkTransferMeters(
+    options.walkTransferMeters ?? WALK_TRANSFER_M,
+  );
+
   const index = await getTransitIndex();
   const from = index.byId.get(fromId);
   const to = index.byId.get(toId);
@@ -664,7 +690,7 @@ export async function planTrips(
         bSide.atStop.latitude,
         bSide.atStop.longitude,
       );
-      if (transferDist > WALK_TRANSFER_M) continue;
+      if (transferDist > walkMax) continue;
 
       const legs: TripLeg[] = [];
       if (aSide.accessWalk) legs.push(aSide.accessWalk);
@@ -700,7 +726,7 @@ export async function planTrips(
             mid.stops[i].stop.latitude,
             mid.stops[i].stop.longitude,
           );
-          if (distIn > WALK_TRANSFER_M) continue;
+          if (distIn > walkMax) continue;
 
           for (const j of alightIdx) {
             if (j <= i) continue;
@@ -714,7 +740,7 @@ export async function planTrips(
               right.atStop.latitude,
               right.atStop.longitude,
             );
-            if (distOut > WALK_TRANSFER_M) continue;
+            if (distOut > walkMax) continue;
 
             const legs: TripLeg[] = [];
             if (left.accessWalk) legs.push(left.accessWalk);
@@ -738,6 +764,113 @@ export async function planTrips(
             }
           }
           if (twoTransferFound >= TWO_TRANSFER_CAP) break;
+        }
+      }
+    }
+
+    if (maxTransfers >= 3) {
+      // Limited 3-transfer search via grid hubs (same placeKey / walkMax).
+      let threeFound = 0;
+      const THREE_CAP = 15;
+      type HubHit = { segment: RouteSegment; idx: number; stop: Stop };
+      const hubs = new Map<string, HubHit[]>();
+      for (const seg of index.segments) {
+        for (let i = 0; i < seg.stops.length; i++) {
+          const key = seg.stops[i].placeKey;
+          const list = hubs.get(key) ?? [];
+          list.push({
+            segment: seg,
+            idx: i,
+            stop: seg.stops[i].stop,
+          });
+          hubs.set(key, list);
+        }
+      }
+
+      for (const mid1 of index.segments) {
+        if (threeFound >= THREE_CAP) break;
+        const boardAt: number[] = [];
+        for (let i = 0; i < mid1.stops.length; i++) {
+          if (fromReach.has(mid1.stops[i].placeKey)) boardAt.push(i);
+        }
+        if (!boardAt.length) continue;
+
+        for (const i of boardAt) {
+          if (threeFound >= THREE_CAP) break;
+          const left = fromReach.get(mid1.stops[i].placeKey);
+          if (!left || left.segment.id === mid1.id) continue;
+          const distIn = haversineMeters(
+            left.atStop.latitude,
+            left.atStop.longitude,
+            mid1.stops[i].stop.latitude,
+            mid1.stops[i].stop.longitude,
+          );
+          if (distIn > walkMax) continue;
+
+          for (let j = i + 1; j < mid1.stops.length; j++) {
+            if (threeFound >= THREE_CAP) break;
+            const hopKey = mid1.stops[j].placeKey;
+            const mid2Boards = hubs.get(hopKey) ?? [];
+            for (const board2 of mid2Boards) {
+              if (threeFound >= THREE_CAP) break;
+              const mid2 = board2.segment;
+              if (mid2.id === mid1.id || mid2.id === left.segment.id) continue;
+              const hopDist = haversineMeters(
+                mid1.stops[j].stop.latitude,
+                mid1.stops[j].stop.longitude,
+                board2.stop.latitude,
+                board2.stop.longitude,
+              );
+              if (hopDist > walkMax) continue;
+
+              for (let m = board2.idx + 1; m < mid2.stops.length; m++) {
+                const right = toReach.get(mid2.stops[m].placeKey);
+                if (!right || right.segment.id === mid2.id) continue;
+                if (right.segment.id === left.segment.id) continue;
+                if (right.segment.id === mid1.id) continue;
+
+                const distOut = haversineMeters(
+                  mid2.stops[m].stop.latitude,
+                  mid2.stops[m].stop.longitude,
+                  right.atStop.latitude,
+                  right.atStop.longitude,
+                );
+                if (distOut > walkMax) continue;
+
+                const legs: TripLeg[] = [];
+                if (left.accessWalk) legs.push(left.accessWalk);
+                legs.push(rideLeg(left.segment, left.fromIdx, left.atIdx));
+                const w1 = walkBetween(
+                  left.atStop,
+                  mid1.stops[i].stop,
+                  "transfer",
+                );
+                if (w1) legs.push(w1);
+                legs.push(rideLeg(mid1, i, j));
+                const w2 = walkBetween(
+                  mid1.stops[j].stop,
+                  board2.stop,
+                  "transfer",
+                );
+                if (w2) legs.push(w2);
+                legs.push(rideLeg(mid2, board2.idx, m));
+                const w3 = walkBetween(
+                  mid2.stops[m].stop,
+                  right.atStop,
+                  "transfer",
+                );
+                if (w3) legs.push(w3);
+                legs.push(rideLeg(right.segment, right.fromIdx, right.atIdx));
+
+                const before = plans.length;
+                finalize(3, legs, seen, plans);
+                if (plans.length > before) {
+                  threeFound += 1;
+                  if (threeFound >= THREE_CAP) break;
+                }
+              }
+            }
+          }
         }
       }
     }

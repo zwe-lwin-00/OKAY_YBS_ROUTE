@@ -4,9 +4,10 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "YBS Finder",
     short_name: "YBS",
-    description: "Yangon bus route and stop finder",
+    description: "Yangon bus route and stop finder — offline-ready",
     start_url: "/",
     display: "standalone",
+    categories: ["travel", "navigation"],
     background_color: "#eef3ef",
     theme_color: "#0b6b52",
     lang: "en",

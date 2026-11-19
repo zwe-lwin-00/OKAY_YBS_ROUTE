@@ -17,72 +17,60 @@ export function HomePage({
   const { t } = useLocale();
 
   return (
-    <>
-      <section className="animate-rise mx-auto max-w-2xl pt-4 text-center sm:pt-10 lg:max-w-none lg:text-left">
-        <div className="flex justify-center lg:justify-start">
+    <div className="mx-auto max-w-2xl">
+      {/* One composition: brand → search → one CTA group */}
+      <section className="animate-rise pt-2 text-center sm:pt-8">
+        <div className="flex justify-center">
           <BrandMark size="lg" />
         </div>
 
-        <div className="animate-rise-delay mt-8">
+        <div className="animate-rise-delay mt-8 sm:mt-10">
           <SearchBar large autofocus />
         </div>
 
-        <div className="mt-5 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
-          <Link
-            href="/plan"
-            className="inline-flex min-h-11 items-center rounded-full bg-accent px-4 text-sm font-semibold text-accent-ink transition hover:brightness-95"
-          >
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5">
+          <Link href="/plan" className="btn-primary">
             {t("trip_planner")}
           </Link>
-          <Link
-            href="/stops"
-            className="inline-flex min-h-11 items-center rounded-full border border-line bg-white/70 px-4 text-sm font-semibold text-ink-soft transition hover:bg-white"
-          >
-            {t("stop_search")}
-          </Link>
-          <Link
-            href="/nearby"
-            className="inline-flex min-h-11 items-center rounded-full border border-line bg-white/70 px-4 text-sm font-semibold text-ink-soft transition hover:bg-white"
-          >
+          <Link href="/nearby" className="btn-secondary">
             {t("nearby_stops")}
           </Link>
-          <Link
-            href="/routes"
-            className="inline-flex min-h-11 items-center rounded-full border border-line bg-white/70 px-4 text-sm font-semibold text-ink-soft transition hover:bg-white"
-          >
+        </div>
+
+        <p className="mt-4 text-[0.8rem] text-ink-faint">
+          <Link href="/stops" className="underline-offset-2 hover:text-brand hover:underline">
+            {t("stop_search")}
+          </Link>
+          <span className="mx-2 text-line-strong">·</span>
+          <Link href="/routes" className="underline-offset-2 hover:text-brand hover:underline">
             {t("browse_routes", { n: routes.length })}
           </Link>
-        </div>
+        </p>
       </section>
 
-      <section className="mt-10 grid gap-6 lg:mt-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-        <div className="overflow-hidden rounded-3xl border border-line bg-white/55 px-3 backdrop-blur">
-          <div className="flex items-end justify-between px-2 pb-2 pt-4">
-            <h2 className="font-[family-name:var(--font-syne)] text-lg font-bold">
-              {t("popular_routes")}
-            </h2>
-            <Link href="/routes" className="text-sm font-medium text-brand">
-              {t("see_all")}
-            </Link>
-          </div>
+      <section className="animate-rise-delay mt-10 sm:mt-12">
+        <div className="mb-3 flex items-baseline justify-between gap-3 px-0.5">
+          <h2 className="font-[family-name:var(--font-syne)] text-base font-bold tracking-tight text-ink">
+            {t("popular_routes")}
+          </h2>
+          <Link
+            href="/routes"
+            className="text-[0.8rem] font-semibold text-brand hover:text-brand-deep"
+          >
+            {t("see_all")}
+          </Link>
+        </div>
+
+        <div className="surface overflow-hidden px-1 sm:px-2">
           {featured.map((route) => (
             <RouteRow key={route.slug} route={route} />
           ))}
         </div>
 
-        <aside className="rounded-3xl border border-line bg-brand px-5 py-6 text-white shadow-[var(--shadow)]">
-          <p className="font-[family-name:var(--font-syne)] text-xl font-bold">
-            {t("built_for_phone")}
-          </p>
-          <p className="mm mt-2 text-sm text-white/85">{t("home_aside")}</p>
-          <ul className="mt-5 space-y-2 text-sm text-white/90">
-            <li>· {t("bullet_routes", { n: routes.length })}</li>
-            <li>· {t("bullet_planner")}</li>
-            <li>· {t("bullet_maps")}</li>
-            <li>· {t("bullet_static")}</li>
-          </ul>
-        </aside>
+        <p className="mm mt-5 text-center text-[0.8rem] leading-relaxed text-ink-faint">
+          {t("bullet_static")} · {t("bullet_routes", { n: routes.length })}
+        </p>
       </section>
-    </>
+    </div>
   );
 }

@@ -31,7 +31,9 @@ export function isFavoriteRoute(slug: string): boolean {
 }
 
 export function isFavoriteStop(id: string): boolean {
-  return loadFavoriteStops().some((s) => s.id === id);
+  return loadFavoriteStops().some(
+    (s) => s.id === id || s.short_id === id,
+  );
 }
 
 export function toggleFavoriteRoute(route: RouteSummary): RouteSummary[] {
