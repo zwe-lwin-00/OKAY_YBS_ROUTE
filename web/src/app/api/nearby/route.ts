@@ -1,14 +1,22 @@
 import { NextResponse } from "next/server";
+import {
+  clampNearbyLimit,
+  clampNearbyRadius,
+  rateLimit,
+} from "@/lib/api-limits";
 import { getRouteBySlug, getRouteSummaries } from "@/lib/data";
 import { haversineMeters } from "@/lib/geo";
 import type { NearbyStop } from "@/lib/types";
 
 export async function GET(request: Request) {
+  const limited = rateLimit(request, { key: "nearby", limit: 45 });
+  if (limited) return limited;
+
   const { searchParams } = new URL(request.url);
   const lat = Number(searchParams.get("lat"));
   const lng = Number(searchParams.get("lng"));
-  const radius = Number(searchParams.get("radius") ?? 1200);
-  const limit = Number(searchParams.get("limit") ?? 40);
+  const radius = clampNearbyRadius(Number(searchParams.get("radius") ?? 1200));
+  const limit = clampNearbyLimit(Number(searchParams.get("limit") ?? 40));
 
   if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
     return NextResponse.json(
@@ -68,6 +76,7 @@ export async function GET(request: Request) {
       radius,
       count: deduped.length,
       stops: deduped,
+      meta: { limit, radiusMax: 5000 },
     });
   } catch (error) {
     return NextResponse.json(

@@ -1,3 +1,4 @@
+import { timingSafeEqual } from "crypto";
 import { NextResponse } from "next/server";
 
 /** Local-dev fallback only — never accepted when NODE_ENV=production. */
@@ -43,6 +44,17 @@ export function readAdminToken(request: Request): string {
   );
 }
 
+function tokensEqual(a: string, b: string): boolean {
+  const left = Buffer.from(a);
+  const right = Buffer.from(b);
+  if (left.length !== right.length) {
+    // Compare against self to keep roughly constant work on length mismatch.
+    timingSafeEqual(left, left);
+    return false;
+  }
+  return timingSafeEqual(left, right);
+}
+
 export function requireAdmin(request: Request): NextResponse | null {
   const expected = adminTokenExpected();
   if (!expected) {
@@ -55,7 +67,7 @@ export function requireAdmin(request: Request): NextResponse | null {
       { status: 503 },
     );
   }
-  if (readAdminToken(request) !== expected) {
+  if (!tokensEqual(readAdminToken(request), expected)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
   return null;

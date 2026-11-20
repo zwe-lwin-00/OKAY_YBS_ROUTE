@@ -3,7 +3,10 @@ import path from "path";
 import type { Catalog, CatalogRoute, RouteData, RouteSummary } from "./types";
 import { dataFileToSlug, slugToDataFile } from "./slug";
 
-const DATA_ROOT = path.resolve(process.cwd(), "..");
+/** Host bind mount (e.g. `/repo`) keeps admin writes durable across container rebuilds. */
+const DATA_ROOT = process.env.YBS_DATA_ROOT
+  ? path.resolve(process.env.YBS_DATA_ROOT)
+  : path.resolve(process.cwd(), "..");
 
 let catalogCache: Catalog | null = null;
 const routeCache = new Map<string, RouteData>();

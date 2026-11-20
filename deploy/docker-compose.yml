@@ -1,0 +1,25 @@
+# Isolated from printwithzwe — binds ONLY host port 3080.
+# Admin JSON writes persist via bind mount of the git checkout.
+services:
+  okayselling-web:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    image: okayselling-web:latest
+    container_name: okayselling-web
+    restart: unless-stopped
+    ports:
+      - "3080:3000"
+    environment:
+      - NODE_ENV=production
+      - ADMIN_TOKEN=${ADMIN_TOKEN:?set a strong ADMIN_TOKEN}
+      - YBS_DATA_ROOT=/repo
+    volumes:
+      # Host repo data (ybs_*.json + api/) — survives container recreate
+      - /opt/okayselling:/repo
+    networks:
+      - okayselling_net
+
+networks:
+  okayselling_net:
+    name: okayselling_net

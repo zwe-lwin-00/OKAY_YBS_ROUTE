@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/admin-auth";
+import { clampInt, rateLimit } from "@/lib/api-limits";
 import { planTrips, resetTransitIndex } from "@/lib/transit-index";
 import { clampWalkTransferMeters } from "@/lib/trip-estimate";
 
@@ -8,11 +9,13 @@ export const PLAN_LIMIT_MAX = 20;
 export const PLAN_LIMIT_DEFAULT = 8;
 
 function clampPlanLimit(raw: number): number {
-  if (!Number.isFinite(raw)) return PLAN_LIMIT_DEFAULT;
-  return Math.min(PLAN_LIMIT_MAX, Math.max(1, Math.floor(raw)));
+  return clampInt(raw, PLAN_LIMIT_DEFAULT, 1, PLAN_LIMIT_MAX);
 }
 
 export async function GET(request: Request) {
+  const limited = rateLimit(request, { key: "plan", limit: 40 });
+  if (limited) return limited;
+
   const { searchParams } = new URL(request.url);
   const from = searchParams.get("from");
   const to = searchParams.get("to");
