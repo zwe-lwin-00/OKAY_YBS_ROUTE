@@ -1,6 +1,8 @@
 # VPS deploy (okayselling)
 
-Isolated stack on host port **3080** only — do not touch printwithzwe 80/443.
+App listens on host **3080**. Public HTTPS for `okayselling.shop` is handled by
+**/opt/vps-edge** (Caddy), which also fronts `printwithzwe.com` — printwithzwe
+containers stay intact; only host port publish is localhost-bound.
 
 ```bash
 cd /opt/okayselling
@@ -11,4 +13,5 @@ docker compose -f deploy/docker-compose.yml up -d --force-recreate
 ```
 
 - `YBS_DATA_ROOT=/repo` + bind mount `/opt/okayselling:/repo` keeps admin PUT durable.
-- Quick tunnel (optional): `cloudflared tunnel --url http://127.0.0.1:3080`
+- Public URLs: https://okayselling.shop · https://printwithzwe.com
+- Edge: `/opt/vps-edge` (do not bind okayselling to host 80/443 directly)
