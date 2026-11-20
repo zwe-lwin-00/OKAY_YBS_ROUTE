@@ -37,6 +37,13 @@ const messages = {
     bullet_maps: "Stop maps with OpenStreetMap",
     bullet_static: "Static data — not live bus tracking",
     footer_note: "Static YBS route data — not live tracking. Verify before travel.",
+    plan_eta_title: "Times are estimates",
+    plan_eta_body:
+      "Arrival times come from distance and typical speeds — not live GPS. Buses may be earlier or later. Confirm on the street before you travel.",
+    plan_eta_badge: "Static estimate · not live",
+    admin_disabled_title: "Admin unavailable",
+    admin_disabled_body:
+      "The data editor is turned off on this server. Set ADMIN_UI_ENABLED=true (with a strong ADMIN_TOKEN) to enable it.",
     all_routes: "All routes",
     all_routes_sub: "Filter by QR / agency / keyword",
     stop_search: "Stop search",
@@ -97,6 +104,13 @@ const messages = {
     bullet_static: "Static data — live tracking မဟုတ်",
     footer_note:
       "Static YBS data ဖြစ်သည် — live tracking မဟုတ်။ အသုံးမပြုမီ စစ်ဆေးပါ။",
+    plan_eta_title: "အချိန်သည် ခန့်မှန်းချက်သာ",
+    plan_eta_body:
+      "ရောက်ရှိချိန်ကို အကွာအဝေးနှင့် ပုံမှန်အမြန်နှုန်းဖြင့် ခန့်မှန်းထားသည် — live GPS မဟုတ်ပါ။ ဘတ်စ်စော/နောက်ကျနိုင်သည်။ မထွက်မီ လမ်းပေါ်တွင် အတည်ပြုပါ။",
+    plan_eta_badge: "ခန့်မှန်း · live မဟုတ်",
+    admin_disabled_title: "Admin ပိတ်ထားသည်",
+    admin_disabled_body:
+      "ဤဆာဗာတွင် data editor ပိတ်ထားသည်။ ဖွင့်ရန် ADMIN_UI_ENABLED=true နှင့် strong ADMIN_TOKEN ထည့်ပါ။",
     all_routes: "လိုင်းအားလုံး",
     all_routes_sub: "QR / agency / keyword ဖြင့် စစ်ထုတ်နိုင်သည်",
     stop_search: "မှတ်တိုင်ရှာ",

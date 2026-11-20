@@ -36,6 +36,17 @@ export function isAdminConfigured(): boolean {
   return adminTokenExpected().length > 0;
 }
 
+/**
+ * Admin UI (/admin) — off by default in production unless ADMIN_UI_ENABLED=true.
+ * API routes still require ADMIN_TOKEN when configured.
+ */
+export function isAdminUiEnabled(): boolean {
+  const flag = (process.env.ADMIN_UI_ENABLED || "").trim().toLowerCase();
+  if (flag === "1" || flag === "true" || flag === "yes") return true;
+  if (flag === "0" || flag === "false" || flag === "no") return false;
+  return !isProduction();
+}
+
 export function readAdminToken(request: Request): string {
   return (
     request.headers.get("x-admin-token") ||

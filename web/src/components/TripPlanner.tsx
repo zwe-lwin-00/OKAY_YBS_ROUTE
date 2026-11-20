@@ -14,6 +14,7 @@ import {
   sortPlans,
   type SortMode,
 } from "@/lib/trip-estimate";
+import { useLocale } from "@/lib/i18n";
 import { StopPicker } from "./StopPicker";
 import { TripMap } from "./TripMap";
 
@@ -24,6 +25,7 @@ function shareId(place: StopPlace): string {
 }
 
 export function TripPlanner() {
+  const { t } = useLocale();
   const router = useRouter();
   const searchParams = useSearchParams();
   const [from, setFrom] = useState<StopPlace | null>(null);
@@ -242,10 +244,15 @@ export function TripPlanner() {
         <p className="mm mt-2 text-sm text-ink-soft">
           A → B · ၃ ခါလဲအထိ · လမ်းလျှောက်အကွာအဝေး ချိန်နိုင် · share link
         </p>
-        <p className="mt-1 text-xs text-ink-soft">
-          ETA is a static distance estimate (not live GPS). Live feed hook is
-          ready when AVL data exists.
-        </p>
+        <div
+          className="mt-3 rounded-2xl border border-amber-200/80 bg-amber-50 px-3 py-2.5"
+          role="note"
+        >
+          <p className="text-xs font-bold uppercase tracking-wide text-amber-900/80">
+            {t("plan_eta_title")}
+          </p>
+          <p className="mt-1 text-sm text-amber-950/90">{t("plan_eta_body")}</p>
+        </div>
 
         <div className="mt-5 space-y-4">
           <StopPicker
@@ -487,7 +494,8 @@ export function TripPlanner() {
                     {plan.walk_minutes
                       ? ` · walk ~${plan.walk_minutes}m`
                       : ""}
-                    {" · static ETA (not live)"}
+                    {" · "}
+                    {t("plan_eta_badge")}
                   </p>
                 </button>
 

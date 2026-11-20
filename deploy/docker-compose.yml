@@ -13,6 +13,8 @@ services:
     environment:
       - NODE_ENV=production
       - ADMIN_TOKEN=${ADMIN_TOKEN:?set a strong ADMIN_TOKEN}
+      # Explicit opt-in for /admin UI on public servers (APIs still token-gated).
+      - ADMIN_UI_ENABLED=${ADMIN_UI_ENABLED:-false}
       - YBS_DATA_ROOT=/repo
     volumes:
       # Host repo data (ybs_*.json + api/) — survives container recreate
