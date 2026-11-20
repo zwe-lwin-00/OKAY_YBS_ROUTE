@@ -109,9 +109,10 @@ export function AdminEditor() {
             Data admin
           </h1>
           <p className="text-sm text-ink-soft">
-            Edit route JSON on disk. Default token:{" "}
-            <code className="text-xs">ybs-admin-local</code> (or{" "}
-            <code className="text-xs">ADMIN_TOKEN</code> env).
+            Edit route JSON on disk. Use the{" "}
+            <code className="text-xs">ADMIN_TOKEN</code> env value (production
+            requires a strong token; local-dev may use{" "}
+            <code className="text-xs">ybs-admin-local</code>).
           </p>
         </div>
         <Link href="/" className="text-sm font-semibold text-brand">

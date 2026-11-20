@@ -1,15 +1,31 @@
 import { NextResponse } from "next/server";
+import { requireAdmin } from "@/lib/admin-auth";
 import { planTrips, resetTransitIndex } from "@/lib/transit-index";
 import { clampWalkTransferMeters } from "@/lib/trip-estimate";
+
+/** Hard cap — prevents planner CPU/memory DoS via huge limit=. */
+export const PLAN_LIMIT_MAX = 20;
+export const PLAN_LIMIT_DEFAULT = 8;
+
+function clampPlanLimit(raw: number): number {
+  if (!Number.isFinite(raw)) return PLAN_LIMIT_DEFAULT;
+  return Math.min(PLAN_LIMIT_MAX, Math.max(1, Math.floor(raw)));
+}
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const from = searchParams.get("from");
   const to = searchParams.get("to");
   const maxTransfers = Number(searchParams.get("maxTransfers") ?? 2);
-  const limit = Number(searchParams.get("limit") ?? 8);
+  const limit = clampPlanLimit(Number(searchParams.get("limit") ?? PLAN_LIMIT_DEFAULT));
   const walk = Number(searchParams.get("walk") ?? 130);
-  if (searchParams.get("refresh") === "1") resetTransitIndex();
+
+  // Index rebuild is admin-only (was public refresh=1 → cache stampede).
+  if (searchParams.get("refresh") === "1") {
+    const denied = requireAdmin(request);
+    if (denied) return denied;
+    resetTransitIndex();
+  }
 
   if (!from || !to) {
     return NextResponse.json(
@@ -25,7 +41,7 @@ export async function GET(request: Request) {
   try {
     const result = await planTrips(from, to, {
       maxTransfers: transfers,
-      limit: Number.isFinite(limit) ? limit : 8,
+      limit,
       walkTransferMeters: clampWalkTransferMeters(walk),
     });
     if (!result) {
@@ -36,6 +52,8 @@ export async function GET(request: Request) {
       meta: {
         maxTransfers: transfers,
         walkTransferMeters: clampWalkTransferMeters(walk),
+        limit,
+        limitMax: PLAN_LIMIT_MAX,
         eta: "static_estimate",
       },
     });

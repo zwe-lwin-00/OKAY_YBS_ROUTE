@@ -1,5 +1,5 @@
-/* YBS Finder offline cache — static shell + GET APIs (network-first for API). */
-const CACHE = "ybs-finder-v1";
+/* YBS Finder offline cache — static shell only (APIs are network-only). */
+const CACHE = "ybs-finder-v2";
 const PRECACHE = ["/", "/plan", "/stops", "/routes", "/favorites", "/nearby", "/offline", "/icon.svg", "/manifest.webmanifest"];
 
 self.addEventListener("install", (event) => {
@@ -23,16 +23,10 @@ self.addEventListener("fetch", (event) => {
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
 
-  // API: network first, cache fallback
+  // API: network-only — avoid stale route/plan data and admin leakage in cache
   if (url.pathname.startsWith("/api/")) {
     event.respondWith(
-      fetch(req)
-        .then((res) => {
-          const copy = res.clone();
-          if (res.ok) caches.open(CACHE).then((c) => c.put(req, copy));
-          return res;
-        })
-        .catch(() => caches.match(req).then((r) => r || caches.match("/offline"))),
+      fetch(req).catch(() => caches.match("/offline")),
     );
     return;
   }

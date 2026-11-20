@@ -22,11 +22,44 @@ const stopSchema = z.object({
   opposite_stop_index: z.string().optional(),
 });
 
+const fareSchema = z
+  .object({
+    currency: z.string().optional(),
+    amount_min: z.number().nullable().optional(),
+    amount_max: z.number().nullable().optional(),
+    notes: z.string().optional(),
+    source: z.string().optional(),
+    updated_at: z.string().optional(),
+  })
+  .optional();
+
+const scheduleSchema = z
+  .object({
+    first_departure: z.string().nullable().optional(),
+    last_departure: z.string().nullable().optional(),
+    headway_minutes: z.number().nullable().optional(),
+    days: z.array(z.string()).optional(),
+    notes: z.string().optional(),
+    source: z.string().optional(),
+    updated_at: z.string().optional(),
+  })
+  .optional();
+
 const routeSchema = z.object({
   bus_line: z.string(),
   route_info: z.record(z.string(), z.string()),
   stops: z.array(stopSchema).min(1),
-  direction_meta: z.unknown().optional(),
+  fare: fareSchema,
+  schedule: scheduleSchema,
+  direction_meta: z
+    .object({
+      pattern: z.enum(["out_and_back", "one_way"]),
+      apex_index: z.number().optional(),
+      outbound_label: z.string().optional(),
+      inbound_label: z.string().optional(),
+      one_way_label: z.string().optional(),
+    })
+    .optional(),
 });
 
 export async function GET(request: Request, ctx: Ctx) {
